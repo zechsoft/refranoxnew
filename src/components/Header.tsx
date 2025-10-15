@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { Menu, X, Wrench, ChevronDown, Shield, Layers, Paintbrush, Flame, Building2, Settings, Hammer, Zap } from 'lucide-react';
 
 const Header = () => {
@@ -10,6 +11,8 @@ const Header = () => {
   const [mobileProductsOpen, setMobileProductsOpen] = useState(false);
   const servicesDropdownRef = useRef(null);
   const productsDropdownRef = useRef(null);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -58,7 +61,6 @@ const Header = () => {
       icon: Paintbrush,
       description: 'Surface protection & coating services'
     },
-    
     { 
       name: 'Passive Fire Proofing', 
       href: '/services#fire-proofing', 
@@ -124,14 +126,33 @@ const Header = () => {
   ];
 
   const handleServiceClick = (serviceHref) => {
-    window.location.href = serviceHref;
+    const [path, hash] = serviceHref.split('#');
+    navigate(path);
+    if (hash) {
+      setTimeout(() => {
+        const element = document.getElementById(hash);
+        if (element) element.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    }
     setIsServicesOpen(false);
     setIsOpen(false);
   };
 
   const handleProductClick = (productId) => {
-    window.location.href = '/products#' + productId;
+    navigate('/products');
+    if (productId) {
+      setTimeout(() => {
+        const element = document.getElementById(productId);
+        if (element) element.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    }
     setIsProductsOpen(false);
+    setIsOpen(false);
+  };
+
+  const handleNavClick = (e, href) => {
+    e.preventDefault();
+    navigate(href);
     setIsOpen(false);
   };
 
@@ -156,10 +177,20 @@ const Header = () => {
             transform: translateY(0);
           }
         }
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+            transform: translateY(-10px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
       `}</style>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
-          <a href="/" className="flex items-center space-x-2">
+          <a href="/" onClick={(e) => handleNavClick(e, '/')} className="flex items-center space-x-2">
             <Wrench className={`h-8 w-8 ${isScrolled ? 'text-blue-600' : 'text-white'}`} />
             <span className={`text-2xl font-bold ${isScrolled ? 'text-gray-900' : 'text-white'}`}>
               REFRANOX
@@ -184,7 +215,7 @@ const Header = () => {
                   >
                     <button
                       className={`font-medium transition-colors duration-200 flex items-center ${
-                        window.location.pathname === item.href
+                        location.pathname === item.href
                           ? isScrolled
                             ? 'text-blue-600'
                             : 'text-orange-400'
@@ -271,8 +302,9 @@ const Header = () => {
                 ) : (
                   <a
                     href={item.href}
+                    onClick={(e) => handleNavClick(e, item.href)}
                     className={`font-medium transition-colors duration-200 ${
-                      window.location.pathname === item.href
+                      location.pathname === item.href
                         ? isScrolled
                           ? 'text-blue-600'
                           : 'text-orange-400'
@@ -291,6 +323,7 @@ const Header = () => {
           {/* Get Quote Button */}
           <a
             href="/contact"
+            onClick={(e) => handleNavClick(e, '/contact')}
             className="hidden lg:block bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-lg font-medium transition-colors duration-200"
           >
             Get Quote
@@ -331,7 +364,7 @@ const Header = () => {
                         }
                       }}
                       className={`w-full flex items-center justify-between px-3 py-2 text-base font-medium rounded-md ${
-                        window.location.pathname === item.href
+                        location.pathname === item.href
                           ? 'text-blue-600 bg-blue-50'
                           : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
                       }`}
@@ -402,12 +435,12 @@ const Header = () => {
                 ) : (
                   <a
                     href={item.href}
+                    onClick={(e) => handleNavClick(e, item.href)}
                     className={`block px-3 py-2 text-base font-medium rounded-md ${
-                      window.location.pathname === item.href
+                      location.pathname === item.href
                         ? 'text-blue-600 bg-blue-50'
                         : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
                     }`}
-                    onClick={() => setIsOpen(false)}
                   >
                     {item.name}
                   </a>
@@ -416,27 +449,14 @@ const Header = () => {
             ))}
             <a
               href="/contact"
+              onClick={(e) => handleNavClick(e, '/contact')}
               className="block px-3 py-2 text-base font-medium bg-orange-500 text-white rounded-md text-center mt-4"
-              onClick={() => setIsOpen(false)}
             >
               Get Quote
             </a>
           </div>
         </div>
       )}
-
-      <style jsx>{`
-        @keyframes fadeIn {
-          from {
-            opacity: 0;
-            transform: translateY(-10px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-      `}</style>
     </header>
   );
 };
