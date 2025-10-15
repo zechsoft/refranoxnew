@@ -6,7 +6,7 @@ import FloatingContactWidgets from './components/FloatingContactWidgets';
 import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
-import Products from './pages/products';
+import Products from './pages/Products';
 import Industries from './pages/Industries';
 import Projects from './pages/Projects';
 import Clients from './pages/Clients';
