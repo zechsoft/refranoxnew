@@ -31,7 +31,7 @@ const Home = () => {
 
   // Simple intersection observer implementation
   useEffect(() => {
-    const observers: IntersectionObserver[] = [];
+    const observers = [];
     
     Object.entries(sectionRefs).forEach(([key, ref]) => {
       if (ref.current) {
@@ -59,33 +59,48 @@ const Home = () => {
   const heroSlides = [
     {
       image: 'https://imgs.search.brave.com/pGtc6nCVWSXoe7cSqjY1tY81lv8VUV5fukAeGPY36gE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMjE2/Nzc2MTE2NC9waG90/by9vaWwtcmVmaW5l/cnktcGxhbnQtY2hl/bWljYWwtZmFjdG9y/eS1vaWwtYW5kLWdh/cy1pbmR1c3RyaWFs/LXpvbmUtb2lsLXBp/cGVsaW5lLXdpdGgt/dmFsdmVzLWluLmpw/Zz9zPTYxMng2MTIm/dz0wJms9MjAmYz1K/WTFQZ3U0a2N3cVpP/ZHhiQldiWTBjZWxP/UTNZU1Q1T3dZRVRa/LVQ1Q3N3PQ',
-      title: 'Techincal Industrial services',
-      subtitle: 'Advanced thermal solutions for modern industrial applications'
+      title: 'Technical Industrial Services',
+      subtitle: 'Precision-engineered solutions powered by cutting-edge industrial technology and high-impact technical execution drive operational excellence and zero downtime.'
     },
     {
       image: 'https://imgs.search.brave.com/pGtc6nCVWSXoe7cSqjY1tY81lv8VUV5fukAeGPY36gE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMjE2/Nzc2MTE2NC9waG90/by9vaWwtcmVmaW5l/cnktcGxhbnQtY2hl/bWljYWwtZmFjdG9y/eS1vaWwtYW5kLWdh/cy1pbmR1c3RyaWFs/LXpvbmUtb2lsLXBp/cGVsaW5lLXdpdGgt/dmFsdmVzLWluLmpw/Zz9zPTYxMng2MTIm/dz0wJms9MjAmYz1K/WTFQZ3U0a2N3cVpP/ZHhiQldiWTBjZWxP/UTNZU1Q1T3dZRVRa/LVQ1Q3N3PQ',
-      title: 'Thermal Insulation ',
-      subtitle: 'Delivering Excellence in Hot, Cold, Acoustic, HVAC, and Cryogenic Material & Application Solutions'
+      title: 'Thermal Insulation Materials Supply and Project Applications',
+      subtitle: 'Integrated end-to-end solutions — from material supply to flawless execution — minimize costs and maximize industrial performance.'
     },
     {
       image: 'https://imgs.search.brave.com/8uhUz_Wr-od8LoinZ-bQAXW4tklxgnWYxYmMpjNLdF0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAyLzcwLzUzLzY0/LzM2MF9GXzI3MDUz/NjQxMV9peEtNWFo1/eWg2c1RwWnptakY3/aVlRMFNRaE9UVDNS/Mi5qcGc',
-      title: 'Refractory Services-Materail & Application',
-      subtitle: 'Precision engineering and installation services for industrial projects'
+      title: 'Refractory Services and Material Application',
+      subtitle: 'Comprehensive solutions—from material supply to precision application—guarantee long-term reliability and operational continuity.'
     },
     {
       image: 'https://imgs.search.brave.com/ZDpn_nwbK7Fux_SMTknNoTj4VB-5-78WRrZoG_4b0z0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMudW5zcGxhc2gu/Y29tL3Bob3RvLTE2/NzA2ODkzMzQ4OTYt/OGZhODI5MWRhYTI3/P2ZtPWpwZyZxPTYw/Jnc9MzAwMCZpeGxp/Yj1yYi00LjEuMCZp/eGlkPU0zd3hNakEz/ZkRCOE1IeHpaV0Z5/WTJoOE1USjhmR2x1/WkhWemRISnBZV3ds/TWpCd2JHRnVkSHhs/Ym53d2ZId3dmSHg4/TUE9PQ',
       title: 'Passive Fire Proofing',
-      subtitle: 'For Intumescent & Cementitious Fire Proofing Solutions'
+      subtitle: 'Advanced passive fire protection via intumescent and cementitious coatings ensures structural integrity and full regulatory compliance.'
     },
     {
       image: 'https://imgs.search.brave.com/ZDpn_nwbK7Fux_SMTknNoTj4VB-5-78WRrZoG_4b0z0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMudW5zcGxhc2gu/Y29tL3Bob3RvLTE2/NzA2ODkzMzQ4OTYt/OGZhODI5MWRhYTI3/P2ZtPWpwZyZxPTYw/Jnc9MzAwMCZpeGxp/Yj1yYi00LjEuMCZp/eGlkPU0zd3hNakEz/ZkRCOE1IeHpaV0Z5/WTJoOE1USjhmR2x1/WkhWemRISnBZV3ds/TWpCd2JHRnVkSHhs/Ym53d2ZId3dmSHg4/TUE9PQ',
-      title: 'Industrial Coatings & Scaffolding works',
-      subtitle: 'For Intumescent & Cementitious Fire Proofing Solutions'
+      title: 'Industrial Coating Works',
+      subtitle: 'Professional industrial coatings deliver superior corrosion resistance, surface protection, and extended asset longevity.'
     },
     {
       image: 'https://imgs.search.brave.com/ZDpn_nwbK7Fux_SMTknNoTj4VB-5-78WRrZoG_4b0z0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMudW5zcGxhc2gu/Y29tL3Bob3RvLTE2/NzA2ODkzMzQ4OTYt/OGZhODI5MWRhYTI3/P2ZtPWpwZyZxPTYw/Jnc9MzAwMCZpeGxp/Yj1yYi00LjEuMCZp/eGlkPU0zd3hNakEz/ZkRCOE1IeHpaV0Z5/WTJoOE1USjhmR2x1/WkhWemRISnBZV3ds/TWpCd2JHRnVkSHhs/Ym53d2ZId3dmSHg4/TUE9PQ',
-      title: 'Mechanical , Civil & Electrical works',
-      subtitle: 'For Intumescent & Cementitious Fire Proofing Solutions'
+      title: 'Scaffolding Works',
+      subtitle: 'Expert scaffolding design, erection, and dismantling services ensuring compliance, safety, and efficient project execution.'
+    },
+    {
+      image: 'https://imgs.search.brave.com/ZDpn_nwbK7Fux_SMTknNoTj4VB-5-78WRrZoG_4b0z0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMudW5zcGxhc2gu/Y29tL3Bob3RvLTE2/NzA2ODkzMzQ4OTYt/OGZhODI5MWRhYTI3/P2ZtPWpwZyZxPTYw/Jnc9MzAwMCZpeGxp/Yj1yYi00LjEuMCZp/eGlkPU0zd3hNakEz/ZkRCOE1IeHpaV0Z5/WTJoOE1USjhmR2x1/WkhWemRISnBZV3ds/TWpCd2JHRnVkSHhs/Ym53d2ZId3dmSHg4/TUE9PQ',
+      title: 'Specialized Civil Works',
+      subtitle: 'Specialized geotechnical solutions—shotcrete, soil stabilization, nailing, and inclined/vertical rock anchoring—deliver superior stability and structural integrity in challenging terrains.'
+    },
+    {
+      image: 'https://imgs.search.brave.com/ZDpn_nwbK7Fux_SMTknNoTj4VB-5-78WRrZoG_4b0z0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMudW5zcGxhc2gu/Y29tL3Bob3RvLTE2/NzA2ODkzMzQ4OTYt/OGZhODI5MWRhYTI3/P2ZtPWpwZyZxPTYw/Jnc9MzAwMCZpeGxp/Yj1yYi00LjEuMCZp/eGlkPU0zd3hNakEz/ZkRCOE1IeHpaV0Z5/WTJoOE1USjhmR2x1/WkhWemRISnBZV3ds/TWpCd2JHRnVkSHhs/Ym53d2ZId3dmSHg4/TUE9PQ',
+      title: 'Mechanical Erection of Piping, Equipment and Structurals',
+      subtitle: 'Precision mechanical erection—piping, equipment, and structural steel—with end-to-end fabrication ensures safe, reliable infrastructure for refineries and heavy industrial plants.'
+    },
+    {
+      image: 'https://imgs.search.brave.com/ZDpn_nwbK7Fux_SMTknNoTj4VB-5-78WRrZoG_4b0z0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMudW5zcGxhc2gu/Y29tL3Bob3RvLTE2/NzA2ODkzMzQ4OTYt/OGZhODI5MWRhYTI3/P2ZtPWpwZyZxPTYw/Jnc9MzAwMCZpeGxp/Yj1yYi00LjEuMCZp/eGlkPU0zd3hNakEz/ZkRCOE1IeHhaV0Z5/WTJoOE1USjhmR2x1/WkhWemRISnBZV3ds/TWpCd2JHRnVkSHhs/Ym53d2ZId3dmSHg4/TUE9PQ',
+      title: 'Electrical Works',
+      subtitle: 'End-to-end electrical solutions—from design to commissioning—deliver safe, reliable power distribution, control systems, and optimized energy management for industrial and infrastructure projects.'
     }
   ];
 
@@ -114,32 +129,39 @@ const Home = () => {
       bgColor: 'bg-blue-50'
     },
     {
-      icon: HardHat,
-      title: 'Scaffolding',
-      description: 'Professional scaffolding systems and temporary access solutions ensuring safety and efficiency for all construction projects.',
-      color: 'text-green-600',
-      bgColor: 'bg-green-50'
-    },
-    {
-      icon: Paintbrush2,
-      title: 'Painting and Blasting',
-      description: 'Industrial surface preparation, abrasive blasting, and protective coating applications for maximum durability.',
-      color: 'text-purple-600',
-      bgColor: 'bg-purple-50'
-    },
-    {
       icon: Flame,
-      title: 'Refractory Works',
+      title: 'Refractory Application Works',
       description: 'High-temperature resistant materials and refractory lining solutions for furnaces, boilers, and industrial heating systems.',
       color: 'text-red-600',
       bgColor: 'bg-red-50'
     },
     {
       icon: Shield,
-      title: 'Fire Proofing',
+      title: 'Passive Fire Proofing Works',
       description: 'Advanced fire protection systems and flame-retardant coatings to safeguard industrial structures and equipment.',
       color: 'text-orange-600',
       bgColor: 'bg-orange-50'
+    },
+    {
+      icon: HardHat,
+      title: 'Scaffolding Works',
+      description: 'Professional scaffolding systems and temporary access solutions ensuring safety and efficiency for all construction projects.',
+      color: 'text-green-600',
+      bgColor: 'bg-green-50'
+    },
+    {
+      icon: Paintbrush2,
+      title: 'Industrial Coating Applications',
+      description: 'Industrial surface preparation, abrasive blasting, and protective coating applications for maximum durability.',
+      color: 'text-purple-600',
+      bgColor: 'bg-purple-50'
+    },
+    {
+      icon: Building2,
+      title: 'Specialized Civil Works',
+      description: 'Complete civil construction services including foundations, structures, and infrastructure development for industrial projects.',
+      color: 'text-cyan-600',
+      bgColor: 'bg-cyan-50'
     },
     {
       icon: Wrench,
@@ -147,13 +169,6 @@ const Home = () => {
       description: 'Precision mechanical fabrication, equipment installation, and structural erection services for industrial applications.',
       color: 'text-indigo-600',
       bgColor: 'bg-indigo-50'
-    },
-    {
-      icon: Building2,
-      title: 'Civil Works',
-      description: 'Complete civil construction services including foundations, structures, and infrastructure development for industrial projects.',
-      color: 'text-cyan-600',
-      bgColor: 'bg-cyan-50'
     },
     {
       icon: Zap,
@@ -312,66 +327,78 @@ const Home = () => {
       </section>
 
       {/* About Section */}
-    {/* About Section */}
-<section ref={sectionRefs.about} className="py-20 bg-white">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div className={`transition-all duration-1000 ${visibleSections.has('about') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        {/* Left side - Image */}
-        <div className="order-2 lg:order-1">
-          <div className="relative">
-            <img
-              src="https://images.pexels.com/photos/1108101/pexels-photo-1108101.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&dpr=1"
-              alt="RIPL Industrial Solutions Team"
-              className="w-full h-96 object-cover rounded-xl shadow-lg"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-orange-500/20 rounded-xl"></div>
-          </div>
-        </div>
-        
-        {/* Right side - Content */}
-        <div className="order-1 lg:order-2">
-          <h2 className="text-4xl font-bold text-gray-900 mb-6">
-            About <span className="text-orange-500">RIPL</span> Industrial Solutions
-          </h2>
-          
-          {/* Brand Equation */}
-          <div className="mb-8 p-6 bg-gradient-to-r from-blue-50 to-orange-50 rounded-xl border-l-4 border-orange-500">
-            <h3 className="text-2xl font-bold text-center mb-2">
-              <span className="text-blue-600">Refra</span> + <span className="text-orange-500">Nox</span> = 
-              <span className="text-gray-700"> Strength + Innovation</span>
-            </h3>
-          </div>
-          
-          <div className="space-y-6">
-            <p className="text-lg text-gray-600 leading-relaxed">
-              RIPL Industrial Solutions is an emerging startup company dedicated to revolutionizing 
-              the industrial services landscape. As a new entrant in the market, we bring fresh 
-              perspectives, innovative approaches, and cutting-edge solutions to meet the evolving 
-              needs of modern industries.
-            </p>
-            
-            <p className="text-lg text-gray-600 leading-relaxed">
-              Though we are at the beginning of our journey with exciting projects on the horizon, 
-              our team comprises seasoned professionals with extensive experience in industrial 
-              insulation, mechanical works, and comprehensive industrial solutions. We are committed 
-              to establishing ourselves as a trusted partner in the industrial sector.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 mt-8">
-              <button className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105 inline-flex items-center justify-center">
-                Learn More <ArrowRight className="ml-2 h-4 w-4" />
-              </button>
-              <button className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105 inline-flex items-center justify-center">
-                Our Vision <Play className="ml-2 h-4 w-4" />
-              </button>
+      <section ref={sectionRefs.about} className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className={`transition-all duration-1000 ${visibleSections.has('about') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              {/* Left side - Image */}
+              <div className="order-2 lg:order-1">
+                <div className="relative">
+                  <img
+                    src="https://images.pexels.com/photos/1108101/pexels-photo-1108101.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&dpr=1"
+                    alt="RIPL Industrial Solutions Team"
+                    className="w-full h-96 object-cover rounded-xl shadow-lg"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-orange-500/20 rounded-xl"></div>
+                </div>
+              </div>
+              
+              {/* Right side - Content */}
+              <div className="order-1 lg:order-2">
+                <h2 className="text-4xl font-bold text-gray-900 mb-6">
+                  About <span className="text-orange-500">RIPL</span> Industrial Solutions
+                </h2>
+                
+                {/* Brand Equation */}
+                <div className="mb-8 p-6 bg-gradient-to-r from-blue-50 to-orange-50 rounded-xl border-l-4 border-orange-500">
+                  <h3 className="text-2xl font-bold text-center mb-2">
+                    <span className="text-blue-600">Refra</span> + <span className="text-orange-500">Nox</span> = 
+                    <span className="text-gray-700"> Strength + Innovation</span>
+                  </h3>
+                </div>
+                
+                <div className="space-y-6">
+                  <p className="text-lg text-gray-600 leading-relaxed">
+                    RIPL Industrial Solutions delivers next-generation thermal insulation, refractory 
+                    applications, and passive fire protection engineered for extreme industrial environments. 
+                    Backed by 35+ years of expertise, we provide comprehensive solutions—from high-temperature 
+                    insulation and fireproofing to scaffolding, civil works, and mechanical services—across 
+                    oil & gas, power, steel, cement, and chemical industries.
+                  </p>
+                  
+                  <p className="text-lg text-gray-600 leading-relaxed">
+                    We don't just execute projects. We build industrial assets that last, perform, and 
+                    protect—with zero-compromise safety, ISO-certified quality, and rapid shutdown response 
+                    capabilities.
+                  </p>
+                  
+                  {/* Key Pillars */}
+                  <div className="flex flex-wrap gap-3 pt-4">
+                    <span className="px-4 py-2 bg-blue-100 text-blue-700 rounded-full font-semibold text-sm">
+                      Safety First
+                    </span>
+                    <span className="px-4 py-2 bg-orange-100 text-orange-700 rounded-full font-semibold text-sm">
+                      Innovation Always
+                    </span>
+                    <span className="px-4 py-2 bg-green-100 text-green-700 rounded-full font-semibold text-sm">
+                      Excellence in Execution
+                    </span>
+                  </div>
+                  
+                  <div className="flex flex-col sm:flex-row gap-4 mt-8">
+                    <button className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105 inline-flex items-center justify-center">
+                      Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                    </button>
+                    <button className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105 inline-flex items-center justify-center">
+                      Our Vision <Play className="ml-2 h-4 w-4" />
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
 
       {/* Services Grid */}
       <section ref={sectionRefs.services} className="py-20 bg-gray-50">
@@ -449,104 +476,110 @@ const Home = () => {
       </section>
 
       {/* Why Choose Us */}
-      {/* Why Choose Us */}
-<section className="py-20 relative overflow-hidden">
-  {/* Background with Pattern */}
-  <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-orange-50"></div>
-  <div className="absolute inset-0 opacity-10">
-    <div className="absolute top-10 left-10 w-72 h-72 bg-blue-500 rounded-full blur-3xl"></div>
-    <div className="absolute bottom-10 right-10 w-72 h-72 bg-orange-500 rounded-full blur-3xl"></div>
-  </div>
-  
-  <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="text-center mb-16 transition-all duration-1000 opacity-100 translate-y-0">
-      <h2 className="text-5xl font-bold mb-4">
-        Why Choose <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-orange-500">REFRANOX</span>
-      </h2>
-      <div className="w-32 h-1 bg-gradient-to-r from-blue-600 to-orange-500 mx-auto mb-6"></div>
-      <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-        Your emerging partner for innovative industrial solutions that combine strength with cutting-edge technology
-      </p>
-    </div>
-    
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <div className="group relative bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100">
-        {/* Floating Icon */}
-        <div className="absolute -top-6 left-8">
-          <div className="bg-gradient-to-br from-blue-500 to-blue-600 w-16 h-16 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-blue-500/50 transition-all duration-300 group-hover:scale-110">
-            <Users className="h-8 w-8 text-white" />
-          </div>
+      <section className="py-20 relative overflow-hidden">
+        {/* Background with Pattern */}
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-orange-50"></div>
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-10 left-10 w-72 h-72 bg-blue-500 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-10 right-10 w-72 h-72 bg-orange-500 rounded-full blur-3xl"></div>
         </div>
         
-        <div className="pt-8">
-          <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors duration-300">Expert Team</h3>
-          <p className="text-gray-600 leading-relaxed">Experienced professionals bringing decades of industry expertise to innovative solutions that drive your success forward.</p>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16 transition-all duration-1000 opacity-100 translate-y-0">
+            <h2 className="text-5xl font-bold mb-4">
+              Why Choose <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-orange-500">RIPL Industrial Solutions</span>
+            </h2>
+            <div className="w-32 h-1 bg-gradient-to-r from-blue-600 to-orange-500 mx-auto mb-6"></div>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Industrial excellence backed by 35+ years of proven expertise and zero-compromise execution
+            </p>
+          </div>
           
-          {/* Decorative Element */}
-          <div className="mt-6 w-full h-1 bg-gradient-to-r from-blue-500/20 to-transparent rounded group-hover:from-blue-500/60 transition-all duration-300"></div>
-        </div>
-      </div>
-      
-      <div className="group relative bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100">
-        {/* Floating Icon */}
-        <div className="absolute -top-6 left-8">
-          <div className="bg-gradient-to-br from-green-500 to-green-600 w-16 h-16 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-green-500/50 transition-all duration-300 group-hover:scale-110">
-            <CheckCircle className="h-8 w-8 text-white" />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="group relative bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100">
+              <div className="absolute -top-6 left-8">
+                <div className="bg-gradient-to-br from-blue-500 to-blue-600 w-16 h-16 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-blue-500/50 transition-all duration-300 group-hover:scale-110">
+                  <Users className="h-8 w-8 text-white" />
+                </div>
+              </div>
+              
+              <div className="pt-8">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors duration-300">35+ Years Proven Expertise</h3>
+                <p className="text-gray-600 leading-relaxed">Veteran-led team with decades of hands-on mastery in insulation, refractory, civil, mechanical, and electrical execution.</p>
+                
+                <div className="mt-6 w-full h-1 bg-gradient-to-r from-blue-500/20 to-transparent rounded group-hover:from-blue-500/60 transition-all duration-300"></div>
+              </div>
+            </div>
+            
+            <div className="group relative bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100">
+              <div className="absolute -top-6 left-8">
+                <div className="bg-gradient-to-br from-red-500 to-red-600 w-16 h-16 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-red-500/50 transition-all duration-300 group-hover:scale-110">
+                  <Shield className="h-8 w-8 text-white" />
+                </div>
+              </div>
+              
+              <div className="pt-8">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-red-600 transition-colors duration-300">Uncompromising Safety</h3>
+                <p className="text-gray-600 leading-relaxed">Zero-incident culture, full OSHA compliance, and proactive risk elimination on every site.</p>
+                
+                <div className="mt-6 w-full h-1 bg-gradient-to-r from-red-500/20 to-transparent rounded group-hover:from-red-500/60 transition-all duration-300"></div>
+              </div>
+            </div>
+            
+            <div className="group relative bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100">
+              <div className="absolute -top-6 left-8">
+                <div className="bg-gradient-to-br from-green-500 to-green-600 w-16 h-16 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-green-500/50 transition-all duration-300 group-hover:scale-110">
+                  <CheckCircle className="h-8 w-8 text-white" />
+                </div>
+              </div>
+              
+              <div className="pt-8">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-green-600 transition-colors duration-300">Certified Quality</h3>
+                <p className="text-gray-600 leading-relaxed">ISO 9001 | 14001 | 45001 certified processes, premium materials, and adherence to global standards.</p>
+                
+                <div className="mt-6 w-full h-1 bg-gradient-to-r from-green-500/20 to-transparent rounded group-hover:from-green-500/60 transition-all duration-300"></div>
+              </div>
+            </div>
+            
+            <div className="group relative bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100">
+              <div className="absolute -top-6 left-8">
+                <div className="bg-gradient-to-br from-orange-500 to-orange-600 w-16 h-16 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-orange-500/50 transition-all duration-300 group-hover:scale-110">
+                  <Clock className="h-8 w-8 text-white" />
+                </div>
+              </div>
+              
+              <div className="pt-8">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-orange-600 transition-colors duration-300">Rapid Response Force</h3>
+                <p className="text-gray-600 leading-relaxed">24/7 mobilization, agile deployment, and shutdown-ready teams across India for end-to-end reliability.</p>
+                
+                <div className="mt-6 w-full h-1 bg-gradient-to-r from-orange-500/20 to-transparent rounded group-hover:from-orange-500/60 transition-all duration-300"></div>
+              </div>
+            </div>
+          </div>
+          
+          <div className="text-center mt-16">
+            <button className="bg-gradient-to-r from-blue-600 to-orange-500 hover:from-blue-700 hover:to-orange-600 text-white px-10 py-4 rounded-2xl font-bold text-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 inline-flex items-center">
+              Partner With Us <ArrowRight className="ml-3 h-5 w-5" />
+            </button>
           </div>
         </div>
-        
-        <div className="pt-8">
-          <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-green-600 transition-colors duration-300">Quality Assurance</h3>
-          <p className="text-gray-600 leading-relaxed">Unwavering commitment to delivering high-quality solutions that exceed industry standards and surpass client expectations.</p>
-          
-          {/* Decorative Element */}
-          <div className="mt-6 w-full h-1 bg-gradient-to-r from-green-500/20 to-transparent rounded group-hover:from-green-500/60 transition-all duration-300"></div>
-        </div>
-      </div>
-      
-      <div className="group relative bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100">
-        {/* Floating Icon */}
-        <div className="absolute -top-6 left-8">
-          <div className="bg-gradient-to-br from-orange-500 to-orange-600 w-16 h-16 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-orange-500/50 transition-all duration-300 group-hover:scale-110">
-            <Shield className="h-8 w-8 text-white" />
-          </div>
-        </div>
-        
-        <div className="pt-8">
-          <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-orange-600 transition-colors duration-300">Innovation Focus</h3>
-          <p className="text-gray-600 leading-relaxed">Fresh approaches and modern techniques combined with proven methodologies for optimal project outcomes and lasting results.</p>
-          
-          {/* Decorative Element */}
-          <div className="mt-6 w-full h-1 bg-gradient-to-r from-orange-500/20 to-transparent rounded group-hover:from-orange-500/60 transition-all duration-300"></div>
-        </div>
-      </div>
-    </div>
-    
-    {/* Call to Action */}
-    <div className="text-center mt-16">
-      <button className="bg-gradient-to-r from-blue-600 to-orange-500 hover:from-blue-700 hover:to-orange-600 text-white px-10 py-4 rounded-2xl font-bold text-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 inline-flex items-center">
-        Partner With Us <ArrowRight className="ml-3 h-5 w-5" />
-      </button>
-    </div>
-  </div>
-</section>
+      </section>
 
       {/* Contact CTA */}
-    {/* Contact CTA */}
-<section className="py-20 bg-blue-900 text-white">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-    <div className="transition-all duration-1000 opacity-100 translate-y-0">
-      <h2 className="text-4xl font-bold mb-4">Ready to Start Your Next Project?</h2>
-      <p className="text-xl mb-8 max-w-2xl mx-auto text-blue-200">
-        Partner with RIPL Industrial Solutions for innovative, reliable, and efficient 
-        industrial services. Let's build the future together.
-      </p>
-      <button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:scale-105 inline-flex items-center">
-        Contact Us Today <ArrowRight className="ml-2 h-5 w-5" />
-      </button>
-    </div>
-  </div>
-</section>
+      <section className="py-20 bg-blue-900 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="transition-all duration-1000 opacity-100 translate-y-0">
+            <h2 className="text-4xl font-bold mb-4">Ready to Start Your Next Project?</h2>
+            <p className="text-xl mb-8 max-w-2xl mx-auto text-blue-200">
+              Partner with RIPL Industrial Solutions for innovative, reliable, and efficient 
+              industrial services. Let's build the future together.
+            </p>
+            <button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:scale-105 inline-flex items-center">
+              Contact Us Today <ArrowRight className="ml-2 h-5 w-5" />
+            </button>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };

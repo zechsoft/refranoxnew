@@ -36,7 +36,7 @@ const Header = () => {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  const services = [
+ const services = [
     { 
       name: 'Industrial Insulation', 
       href: '/services#industrial-insulation', 
@@ -44,40 +44,40 @@ const Header = () => {
       description: 'Comprehensive thermal protection solutions'
     },
     { 
-      name: 'Refractory Works', 
+      name: 'Refractory Application Works', 
       href: '/services#refractory-works', 
       icon: Flame,
       description: 'High-temperature industrial solutions'
     },
     { 
-      name: 'Scaffolding', 
+      name: 'Passive Fire Proofing Works', 
+      href: '/services#fire-proofing', 
+      icon: Building2,
+      description: 'Passive fire protection systems'
+    },
+    { 
+      name: 'Scaffolding Works', 
       href: '/services#scaffolding', 
       icon: Layers,
       description: 'Safe access solutions for construction'
     },
     { 
-      name: 'Painting and Blasting', 
+      name: 'Industrial Coating Applications', 
       href: '/services#painting-blasting', 
       icon: Paintbrush,
       description: 'Surface protection & coating services'
     },
     { 
-      name: 'Passive Fire Proofing', 
-      href: '/services#fire-proofing', 
-      icon: Building2,
-      description: 'Passive fire protection systems'
+      name: 'Specialized Civil Works', 
+      href: '/services#civil-works', 
+      icon: Hammer,
+      description: 'Foundation & infrastructure development'
     },
     { 
       name: 'Mechanical Fabrication & Erection', 
       href: '/services#mechanical-fabrication', 
       icon: Settings,
       description: 'Precision engineering solutions'
-    },
-    { 
-      name: 'Civil Works', 
-      href: '/services#civil-works', 
-      icon: Hammer,
-      description: 'Foundation & infrastructure development'
     },
     { 
       name: 'Electrical Works', 

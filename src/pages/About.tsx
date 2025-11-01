@@ -92,9 +92,9 @@ const About = () => {
   <div className="absolute inset-0 bg-black/60"></div>
   <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div className="text-center text-white max-w-4xl mx-auto transition-all duration-1000 opacity-100 translate-y-0">
-      <h1 className="text-5xl md:text-6xl font-bold mb-6">About RIPL</h1>
+      <h1 className="text-5xl md:text-6xl font-bold mb-6">About REFRANOX</h1>
       <p className="text-xl md:text-2xl text-gray-200 mb-4">
-        Emerging Excellence in Industrial Solutions. Building the Future Through Innovation.
+        Forward-Thinking Excellence in Industrial Solutions. Redefining Standards Through Innovation.
       </p>
       <div className="text-lg text-orange-300 font-semibold">
         Refra + Nox = Strength + Innovation
@@ -102,45 +102,52 @@ const About = () => {
     </div>
   </div>
 </section>
-      {/* Company Story */}
-      <section className="py-20 bg-white">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-      <div className="transition-all duration-1000 opacity-100 translate-x-0">
-        <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Story</h2>
-        <div className="space-y-4 text-lg text-gray-600">
-          <p>
-            RIPL Industrial Solutions is an emerging startup founded with a vision to 
-            revolutionize industrial services. We bring fresh perspectives and innovative 
-            approaches backed by seasoned professionals with extensive industry experience.
-          </p>
-          <p>
-            <span className="text-blue-600 font-semibold">Refra + Nox = Strength + Innovation</span> - 
-            Our core philosophy combining traditional expertise with cutting-edge technologies 
-            for superior industrial solutions.
-          </p>
-          <p>
-            Based in Chennai, we're strategically positioned to serve clients across India 
-            with exciting projects on the horizon, focusing on safety, quality, and reliability.
-          </p>
+      {/* Our Story */}
+    <section className="py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="transition-all duration-1000 opacity-100 translate-x-0">
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Story</h2>
+            <div className="space-y-4 text-lg text-gray-600">
+              <p>
+                REFRANOX Industrial Solutions is a forward-thinking startup committed to 
+                redefining excellence in industrial services. Founded by industry veterans 
+                with decades of proven expertise, we blend time-tested engineering rigor with 
+                innovative, technology-driven solutions to deliver unmatched value.
+              </p>
+              <p>
+                <span className="text-blue-600 font-semibold">Refra + Nox = Strength + Innovation</span> - 
+                Our name reflects our core philosophy: combining the resilience of refractory-grade 
+                durability with next-generation ingenuity to engineer solutions that last longer, 
+                perform better, and cost less over time.
+              </p>
+              <p>
+                Headquartered in Chennai, we are strategically positioned to serve major industrial 
+                hubs across India. With a growing portfolio of landmark projects, we are building a 
+                reputation for uncompromising safety, superior quality, and absolute reliability — one 
+                successful execution at a time.
+              </p>
+              <p className="font-semibold text-gray-900">
+                We don't just meet standards. We set them.
+              </p>
+            </div>
+          </div>
+                   
+          <div className="grid grid-cols-2 gap-4 transition-all duration-1000 opacity-100 translate-x-0">
+            <img
+              src="https://images.pexels.com/photos/236698/pexels-photo-236698.jpeg?auto=compress&cs=tinysrgb&w=600"
+              alt="Industrial petrochemical facility"
+              className="rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+            />
+            <img
+              src="https://images.pexels.com/photos/4483610/pexels-photo-4483610.jpeg?auto=compress&cs=tinysrgb&w=600"
+              alt="Industrial insulation materials"
+              className="rounded-lg shadow-lg mt-8 hover:shadow-xl transition-shadow duration-300"
+            />
+          </div>
         </div>
       </div>
-                   
-      <div className="grid grid-cols-2 gap-4 transition-all duration-1000 opacity-100 translate-x-0">
-        <img
-          src="https://images.pexels.com/photos/236698/pexels-photo-236698.jpeg?auto=compress&cs=tinysrgb&w=600"
-          alt="Industrial petrochemical facility"
-          className="rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
-        />
-        <img
-          src="https://images.pexels.com/photos/4483610/pexels-photo-4483610.jpeg?auto=compress&cs=tinysrgb&w=600"
-          alt="Industrial insulation materials"
-          className="rounded-lg shadow-lg mt-8 hover:shadow-xl transition-shadow duration-300"
-        />
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
       {/* Mission, Vision, Values */}
       <section ref={valuesRef} className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
