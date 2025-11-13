@@ -23,31 +23,31 @@ const Industries = () => {
     {
       icon: Zap,
       name: 'Power Generation',
-      subtitle: 'Thermal & Nuclear Power Plants',
-      description: 'Comprehensive insulation solutions for power generation facilities including thermal power plants, nuclear facilities, and renewable energy installations.',
-      image: 'https://images.pexels.com/photos/433308/pexels-photo-433308.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+      subtitle: 'Thermal, Nuclear & Renewable Plants',
+      description: 'We provide specialized services for boilers, turbines, heat exchangers, and balance-of-plant systems in thermal and nuclear power stations. Our insulation, refractory, and coating solutions enhance efficiency, safety, and reliability, while our civil and mechanical teams support structural, piping, and electrical works in both conventional and renewable energy plants.',
+      image: 'https://images.pexels.com/photos/442576/pexels-photo-442576.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       services: [
-        { icon: Shield, name: 'Boiler Insulation', desc: 'High-temperature insulation for power boilers' },
-        { icon: Flame, name: 'Turbine Insulation', desc: 'Steam and gas turbine thermal protection' },
-        { icon: Building2, name: 'Pipeline Insulation', desc: 'Steam and water pipeline insulation systems' },
-        { icon: Volume2, name: 'Noise Control', desc: 'Acoustic solutions for power plant equipment' }
+        { icon: Shield, name: 'Boiler & Turbine Systems', desc: 'Specialized insulation and refractory solutions' },
+        { icon: Flame, name: 'Heat Exchangers', desc: 'Thermal protection and efficiency enhancement' },
+        { icon: Building2, name: 'Balance-of-Plant', desc: 'Civil, mechanical & electrical works' },
+        { icon: Volume2, name: 'Renewable Energy', desc: 'Support for solar, wind & hybrid plants' }
       ],
       challenges: [
-        'Extreme temperature variations (up to 650°C)',
-        'High-pressure steam systems',
-        'Stringent safety and environmental regulations',
-        'Minimal downtime requirements'
+        'High-temperature boiler and turbine systems',
+        'Stringent efficiency and safety requirements',
+        'Complex balance-of-plant infrastructure',
+        'Integration with renewable energy systems'
       ],
       solutions: [
-        'Advanced refractory materials for extreme conditions',
-        'Modular insulation systems for quick installation',
-        'Compliance with power industry standards',
-        'Emergency repair and maintenance services'
+        'Advanced insulation & refractory applications',
+        'Coating solutions for enhanced reliability',
+        'Comprehensive civil & mechanical support',
+        'Electrical works for conventional & renewable plants'
       ],
       projects: [
-        'NTPC Thermal Power Plant - Boiler Insulation',
-        'Reliance Power Plant - Turbine Insulation',
-        'BHEL Project - Complete Insulation Package'
+        'NTPC Thermal Power Station - Complete Package',
+        'Nuclear Power Plant - Specialized Insulation',
+        'Renewable Energy Project - MEP Works'
       ],
       color: 'text-yellow-600',
       bgColor: 'bg-yellow-50',
@@ -56,32 +56,32 @@ const Industries = () => {
     },
     {
       icon: Fuel,
-      name: 'Oil & Gas / LNG',
+      name: 'Oil & Gas',
       subtitle: 'Upstream, Midstream & Downstream',
-      description: 'Specialized insulation services for oil refineries, gas processing plants, LNG terminals, and petrochemical complexes with focus on safety and efficiency.',
-      image: 'https://images.pexels.com/photos/257736/pexels-photo-257736.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+      description: 'We support oil and gas facilities with turnkey insulation, fireproofing, coating, and mechanical erection services that meet stringent international standards. From refineries and petrochemical complexes to offshore platforms and terminals, we ensure asset integrity, corrosion protection, and operational safety across every stage of the value chain.',
+      image: 'https://images.pexels.com/photos/257700/pexels-photo-257700.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       services: [
-        { icon: Shield, name: 'Pipeline Insulation', desc: 'Oil and gas pipeline thermal protection' },
-        { icon: Flame, name: 'Vessel Insulation', desc: 'Storage tanks and pressure vessels' },
-        { icon: Building2, name: 'Cryogenic Systems', desc: 'LNG and low-temperature applications' },
-        { icon: Volume2, name: 'Fire Protection', desc: 'Fire-resistant insulation systems' }
+        { icon: Shield, name: 'Refineries & Terminals', desc: 'Complete insulation & fireproofing solutions' },
+        { icon: Flame, name: 'Offshore Platforms', desc: 'Marine-grade coating and protection systems' },
+        { icon: Building2, name: 'Asset Integrity', desc: 'Corrosion protection & maintenance services' },
+        { icon: Volume2, name: 'Mechanical Erection', desc: 'Piping, structural & equipment installation' }
       ],
       challenges: [
-        'Hazardous and explosive environments',
-        'Cryogenic temperatures (-162°C for LNG)',
-        'Corrosive chemical exposure',
-        'Strict safety and compliance requirements'
+        'Hazardous and corrosive environments',
+        'Stringent international safety standards',
+        'Complex offshore and onshore operations',
+        'Asset integrity and lifecycle management'
       ],
       solutions: [
-        'Explosion-proof and fire-resistant materials',
-        'Specialized cryogenic insulation systems',
-        'Chemical-resistant barrier systems',
-        'Comprehensive safety protocols and training'
+        'Turnkey insulation & fireproofing services',
+        'International standard compliant coating systems',
+        'Comprehensive mechanical erection capabilities',
+        'QA/QC and HSE protocol implementation'
       ],
       projects: [
         'ONGC Refinery - Complete Insulation Package',
-        'Indian Oil LNG Terminal - Cryogenic Systems',
-        'Reliance Petrochemicals - Heat Exchanger Insulation'
+        'Offshore Platform - Fireproofing & Coating',
+        'Petrochemical Complex - Turnkey Services'
       ],
       color: 'text-blue-600',
       bgColor: 'bg-blue-50',
@@ -90,32 +90,32 @@ const Industries = () => {
     },
     {
       icon: FlaskConical,
-      name: 'Petrochemical',
-      subtitle: 'Chemical Processing & Manufacturing',
-      description: 'Advanced insulation solutions for petrochemical plants, chemical processing facilities, and manufacturing units handling complex chemical processes.',
-      image: 'https://images.pexels.com/photos/236698/pexels-photo-236698.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+      name: 'Petrochemical & Chemical',
+      subtitle: 'Process & Manufacturing Plants',
+      description: 'Our team delivers comprehensive thermal, refractory, and protective coating systems for reactors, reformers, columns, and storage facilities. We provide process-critical civil, mechanical, and electrical works that support safe, efficient, and compliant operations in continuous process environments.',
+      image: 'https://images.pexels.com/photos/3825517/pexels-photo-3825517.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       services: [
-        { icon: Shield, name: 'Reactor Insulation', desc: 'Chemical reactor thermal management' },
-        { icon: Flame, name: 'Heat Exchanger', desc: 'Process heat exchanger insulation' },
-        { icon: Building2, name: 'Distillation Columns', desc: 'Column and tower insulation systems' },
-        { icon: Volume2, name: 'Process Piping', desc: 'Chemical process pipeline insulation' }
+        { icon: Shield, name: 'Reactors & Reformers', desc: 'High-temperature thermal solutions' },
+        { icon: Flame, name: 'Columns & Vessels', desc: 'Specialized insulation & coating systems' },
+        { icon: Building2, name: 'Storage Facilities', desc: 'Tank and vessel protection systems' },
+        { icon: Volume2, name: 'Process-Critical Works', desc: 'Civil, mechanical & electrical services' }
       ],
       challenges: [
-        'Complex chemical processes requiring precise temperature control',
-        'Corrosive chemical environments',
-        'High-pressure process conditions',
-        'Contamination prevention requirements'
+        'Continuous process environments',
+        'Chemical exposure and corrosion risks',
+        'High-temperature reactor systems',
+        'Safety and compliance requirements'
       ],
       solutions: [
-        'Chemical-resistant insulation materials',
-        'Precision temperature control systems',
-        'Contamination-free installation processes',
-        'Custom-engineered solutions for unique processes'
+        'Comprehensive thermal & refractory systems',
+        'Chemical-resistant protective coatings',
+        'Process-critical infrastructure support',
+        'Integrated civil, mechanical & electrical works'
       ],
       projects: [
-        'BASF Chemical Plant - Reactor Insulation',
-        'Dow Chemicals - Process Unit Insulation',
-        'Tata Chemicals - Complete Facility Package'
+        'Chemical Plant - Reactor Insulation Package',
+        'Petrochemical Complex - Coating Systems',
+        'Process Unit - Complete MEP Works'
       ],
       color: 'text-green-600',
       bgColor: 'bg-green-50',
@@ -124,47 +124,185 @@ const Industries = () => {
     },
     {
       icon: Wrench,
-      name: 'Steel & Cement',
-      subtitle: 'Heavy Industries & Manufacturing',
-      description: 'Robust insulation solutions for steel plants, cement factories, and heavy manufacturing industries requiring high-temperature and wear-resistant systems.',
-      image: 'https://images.pexels.com/photos/1108101/pexels-photo-1108101.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+      name: 'Steel & Metallurgical',
+      subtitle: 'Metal Processing Industries',
+      description: 'We execute refractory linings, insulation, and coating applications for furnaces, ladles, kilns, and structural systems used in steelmaking and metal processing. With mechanical and civil expertise, we undertake erection, maintenance, and shutdown works that improve equipment life, plant uptime, and production efficiency.',
+      image: 'https://images.pexels.com/photos/2760241/pexels-photo-2760241.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       services: [
-        { icon: Shield, name: 'Furnace Lining', desc: 'Blast furnace and steel furnace refractory' },
-        { icon: Flame, name: 'Kiln Insulation', desc: 'Cement kiln and rotary kiln systems' },
-        { icon: Building2, name: 'Duct Systems', desc: 'Hot gas duct and exhaust systems' },
-        { icon: Volume2, name: 'Noise Control', desc: 'Industrial noise reduction solutions' }
+        { icon: Shield, name: 'Furnace & Ladle Lining', desc: 'High-temperature refractory systems' },
+        { icon: Flame, name: 'Kiln Applications', desc: 'Specialized insulation & coating works' },
+        { icon: Building2, name: 'Structural Systems', desc: 'Mechanical erection & civil works' },
+        { icon: Volume2, name: 'Shutdown Services', desc: 'Maintenance and turnaround support' }
       ],
       challenges: [
-        'Extremely high operating temperatures (>1500°C)',
+        'Extreme high-temperature operations (>1500°C)',
         'Severe mechanical wear and abrasion',
-        'Heavy industrial environments',
-        'Continuous operation requirements'
+        'Continuous production requirements',
+        'Complex shutdown and maintenance schedules'
       ],
       solutions: [
-        'Ultra-high temperature refractory materials',
-        'Wear-resistant and abrasion-proof systems',
-        'Heavy-duty industrial-grade insulation',
-        'Minimal maintenance and long-life solutions'
+        'Ultra-high temperature refractory linings',
+        'Durable insulation and coating systems',
+        'Expert mechanical and civil support',
+        'Efficient shutdown and maintenance execution'
       ],
       projects: [
         'Tata Steel - Blast Furnace Refractory',
-        'JSW Steel - Rolling Mill Insulation',
-        'UltraTech Cement - Kiln Insulation Package'
+        'JSW Steel - Complete Insulation Package',
+        'Steel Plant - Shutdown & Maintenance Services'
       ],
       color: 'text-red-600',
       bgColor: 'bg-red-50',
       gradientFrom: 'from-red-500',
       gradientTo: 'to-orange-600'
+    },
+    {
+      icon: Factory,
+      name: 'Cement & Lime',
+      subtitle: 'Manufacturing Units',
+      description: 'Our services cover high-temperature refractory linings, insulation, and structural maintenance for kilns, preheaters, coolers, and ducts. We also execute shotcreting, anchoring, and coating works to improve thermal performance and plant reliability under demanding operating conditions.',
+      image: 'https://images.pexels.com/photos/586019/pexels-photo-586019.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+      services: [
+        { icon: Shield, name: 'Kiln Refractory', desc: 'High-temperature lining systems' },
+        { icon: Flame, name: 'Preheaters & Coolers', desc: 'Thermal insulation solutions' },
+        { icon: Building2, name: 'Shotcreting & Anchoring', desc: 'Structural maintenance works' },
+        { icon: Volume2, name: 'Duct Systems', desc: 'Coating and protection applications' }
+      ],
+      challenges: [
+        'High-temperature continuous operations',
+        'Thermal cycling and material degradation',
+        'Dust and abrasive environments',
+        'Structural integrity maintenance'
+      ],
+      solutions: [
+        'Advanced refractory lining systems',
+        'Specialized insulation for extreme conditions',
+        'Shotcreting and anchoring expertise',
+        'Comprehensive coating and maintenance works'
+      ],
+      projects: [
+        'UltraTech Cement - Kiln Refractory Package',
+        'Cement Plant - Complete Insulation Works',
+        'Lime Manufacturing - Structural Maintenance'
+      ],
+      color: 'text-gray-600',
+      bgColor: 'bg-gray-50',
+      gradientFrom: 'from-gray-500',
+      gradientTo: 'to-gray-700'
+    },
+    {
+      icon: FlaskConical,
+      name: 'Fertilizer & Process',
+      subtitle: 'Chemical Process Industries',
+      description: 'We offer corrosion-resistant coating systems, insulation, and fireproofing for ammonia, urea, and process units in fertilizer and chemical industries. Our integrated civil and mechanical works ensure safe construction, modification, and maintenance of critical process infrastructure.',
+      image: 'https://images.pexels.com/photos/534163/pexels-photo-534163.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+      services: [
+        { icon: Shield, name: 'Ammonia & Urea Units', desc: 'Specialized insulation & fireproofing' },
+        { icon: Flame, name: 'Corrosion Protection', desc: 'Chemical-resistant coating systems' },
+        { icon: Building2, name: 'Process Infrastructure', desc: 'Civil & mechanical works' },
+        { icon: Volume2, name: 'Plant Modifications', desc: 'Construction & maintenance support' }
+      ],
+      challenges: [
+        'Corrosive chemical environments',
+        'High-pressure process systems',
+        'Safety and environmental regulations',
+        'Complex process integration requirements'
+      ],
+      solutions: [
+        'Corrosion-resistant coating and insulation',
+        'Comprehensive fireproofing solutions',
+        'Integrated civil and mechanical capabilities',
+        'Safe construction and modification services'
+      ],
+      projects: [
+        'Fertilizer Plant - Complete Coating Package',
+        'Urea Unit - Insulation & Fireproofing',
+        'Process Industry - Civil & Mechanical Works'
+      ],
+      color: 'text-emerald-600',
+      bgColor: 'bg-emerald-50',
+      gradientFrom: 'from-emerald-500',
+      gradientTo: 'to-green-600'
+    },
+    {
+      icon: Fuel,
+      name: 'Refineries & LNG',
+      subtitle: 'Terminals & Processing Facilities',
+      description: 'We are experienced in cryogenic insulation, passive fireproofing, and coating systems for LNG terminals, refinery process units, and storage tanks. Our capabilities include mechanical erection, scaffolding, and electrical works, executed under stringent QA/QC and HSE requirements for brownfield and greenfield projects.',
+      image: 'https://images.pexels.com/photos/4219654/pexels-photo-4219654.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+      services: [
+        { icon: Shield, name: 'Cryogenic Insulation', desc: 'LNG terminal specialized systems' },
+        { icon: Flame, name: 'Passive Fireproofing', desc: 'Process unit fire protection' },
+        { icon: Building2, name: 'Storage Tanks', desc: 'Tank coating and insulation works' },
+        { icon: Volume2, name: 'MEP Services', desc: 'Mechanical, electrical & scaffolding' }
+      ],
+      challenges: [
+        'Cryogenic temperature requirements (-162°C)',
+        'Stringent QA/QC and HSE protocols',
+        'Complex brownfield and greenfield projects',
+        'Multi-disciplinary integration needs'
+      ],
+      solutions: [
+        'Specialized cryogenic insulation systems',
+        'Comprehensive passive fireproofing',
+        'Expert mechanical erection and scaffolding',
+        'Integrated electrical works and QA/QC compliance'
+      ],
+      projects: [
+        'LNG Terminal - Cryogenic Insulation Package',
+        'Refinery - Complete Fireproofing Works',
+        'Storage Facility - Coating & MEP Services'
+      ],
+      color: 'text-cyan-600',
+      bgColor: 'bg-cyan-50',
+      gradientFrom: 'from-cyan-500',
+      gradientTo: 'to-blue-600'
+    },
+    {
+      icon: Building2,
+      name: 'Infrastructure & Buildings',
+      subtitle: 'Commercial & Industrial Projects',
+      description: 'Our civil and MEP teams deliver comprehensive construction, finishing, and protection systems for commercial, industrial, and institutional infrastructure. We specialize in fireproofing, coating, and electrical installations, ensuring safety, sustainability, and aesthetic excellence in modern infrastructure development.',
+      image: 'https://images.pexels.com/photos/210607/pexels-photo-210607.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+      services: [
+        { icon: Shield, name: 'Construction & Finishing', desc: 'Complete civil and MEP works' },
+        { icon: Flame, name: 'Fireproofing Systems', desc: 'Building fire protection solutions' },
+        { icon: Building2, name: 'Coating Applications', desc: 'Protective and aesthetic coatings' },
+        { icon: Volume2, name: 'Electrical Installations', desc: 'Power and control systems' }
+      ],
+      challenges: [
+        'Complex multi-disciplinary coordination',
+        'Safety and sustainability requirements',
+        'Aesthetic and functional integration',
+        'Modern building code compliance'
+      ],
+      solutions: [
+        'Comprehensive civil and MEP capabilities',
+        'Advanced fireproofing and coating systems',
+        'Professional electrical installation services',
+        'Safety, sustainability & aesthetic excellence'
+      ],
+      projects: [
+        'Commercial Complex - Complete MEP Package',
+        'Industrial Building - Fireproofing Works',
+        'Institutional Project - Civil & Electrical Services'
+      ],
+      color: 'text-indigo-600',
+      bgColor: 'bg-indigo-50',
+      gradientFrom: 'from-indigo-500',
+      gradientTo: 'to-purple-600'
     }
   ];
 
   const otherIndustries = [
-    'Fertilizer Manufacturing',
-    'Food Processing',
     'Pharmaceutical',
-    'Textile Mills',
-    'Paper & Pulp',
-    'Glass Manufacturing'
+    'Food Processing',
+    'Ports & Marine',
+    'Water Treatment',
+    'Desalination Plants',
+    'Data Centers',
+    'Industrial Warehouses',
+    'Offshore Facilities'
   ];
 
   return (
@@ -189,7 +327,7 @@ const Industries = () => {
           >
             <h1 className="text-5xl md:text-6xl font-bold mb-6">Industries We Serve</h1>
             <p className="text-xl md:text-2xl text-gray-200">
-              Delivering specialized insulation solutions across critical industrial sectors
+              Multi-disciplinary engineering, construction, and maintenance solutions across critical industrial sectors
             </p>
           </motion.div>
         </div>
@@ -363,7 +501,7 @@ const Industries = () => {
             </p>
           </motion.div>
           
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {otherIndustries.map((industry, index) => (
               <motion.div
                 key={industry}

@@ -64,12 +64,12 @@ const Home = () => {
     },
     {
       image: 'https://imgs.search.brave.com/pGtc6nCVWSXoe7cSqjY1tY81lv8VUV5fukAeGPY36gE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMjE2/Nzc2MTE2NC9waG90/by9vaWwtcmVmaW5l/cnktcGxhbnQtY2hl/bWljYWwtZmFjdG9y/eS1vaWwtYW5kLWdh/cy1pbmR1c3RyaWFs/LXpvbmUtb2lsLXBp/cGVsaW5lLXdpdGgt/dmFsdmVzLWluLmpw/Zz9zPTYxMng2MTIm/dz0wJms9MjAmYz1K/WTFQZ3U0a2N3cVpP/ZHhiQldiWTBjZWxP/UTNZU1Q1T3dZRVRa/LVQ1Q3N3PQ',
-      title: 'Thermal Insulation Materials Supply and Project Applications',
+      title: 'Thermal Insulation',
       subtitle: 'Integrated end-to-end solutions — from material supply to flawless execution — minimize costs and maximize industrial performance.'
     },
     {
       image: 'https://imgs.search.brave.com/8uhUz_Wr-od8LoinZ-bQAXW4tklxgnWYxYmMpjNLdF0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAyLzcwLzUzLzY0/LzM2MF9GXzI3MDUz/NjQxMV9peEtNWFo1/eWg2c1RwWnptakY3/aVlRMFNRaE9UVDNS/Mi5qcGc',
-      title: 'Refractory Services and Material Application',
+      title: 'Refractory Services',
       subtitle: 'Comprehensive solutions—from material supply to precision application—guarantee long-term reliability and operational continuity.'
     },
     {
@@ -94,7 +94,7 @@ const Home = () => {
     },
     {
       image: 'https://imgs.search.brave.com/ZDpn_nwbK7Fux_SMTknNoTj4VB-5-78WRrZoG_4b0z0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMudW5zcGxhc2gu/Y29tL3Bob3RvLTE2/NzA2ODkzMzQ4OTYt/OGZhODI5MWRhYTI3/P2ZtPWpwZyZxPTYw/Jnc9MzAwMCZpeGxp/Yj1yYi00LjEuMCZp/eGlkPU0zd3hNakEz/ZkRCOE1IeHpaV0Z5/WTJoOE1USjhmR2x1/WkhWemRISnBZV3ds/TWpCd2JHRnVkSHhs/Ym53d2ZId3dmSHg4/TUE9PQ',
-      title: 'Mechanical Erection of Piping, Equipment and Structurals',
+      title: 'Mechanical works',
       subtitle: 'Precision mechanical erection—piping, equipment, and structural steel—with end-to-end fabrication ensures safe, reliable infrastructure for refineries and heavy industrial plants.'
     },
     {
@@ -108,7 +108,7 @@ const Home = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
-    }, 5000);
+    }, 7000);
     return () => clearInterval(timer);
   }, []);
 

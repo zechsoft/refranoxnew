@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { useLocation } from 'react-router-dom';
 import { 
   Mail, 
   Phone, 
@@ -16,6 +17,7 @@ import {
 const Contact = () => {
   const [heroRef, heroInView] = useInView({ triggerOnce: true });
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const location = useLocation();
 
   const [formData, setFormData] = useState({
     name: '',
@@ -28,70 +30,38 @@ const Contact = () => {
     budget: ''
   });
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  // Handle navigation from Get Quote button
+  useEffect(() => {
+    if (location.hash === '#contact-form') {
+      setTimeout(() => {
+        const formSection = document.getElementById('contact-form');
+        if (formSection) {
+          const headerOffset = 100;
+          const elementPosition = formSection.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+          
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      }, 300);
+    }
+  }, [location]);
+
+  const handleInputChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     // Handle form submission logic here
     setFormSubmitted(true);
     setTimeout(() => setFormSubmitted(false), 5000);
   };
-
-  const offices = [
-    {
-      name: 'Head Office - Mumbai',
-      address: 'Plot No. 123, Industrial Area, Andheri (East), Mumbai - 400099, Maharashtra, India',
-      phone: '+91-22-XXXX-XXXX',
-      email: 'mumbai@refranox.com',
-      timings: 'Mon-Fri: 9:00 AM - 6:00 PM',
-      type: 'Primary'
-    },
-    {
-      name: 'Northern Region - Delhi',
-      address: 'Sector 15, Industrial Area, Gurgaon - 122015, Haryana, India',
-      phone: '+91-124-XXXX-XXXX',
-      email: 'delhi@refranox.com',
-      timings: 'Mon-Fri: 9:00 AM - 6:00 PM',
-      type: 'Regional'
-    },
-    {
-      name: 'Southern Region - Chennai',
-      address: 'Guindy Industrial Estate, Chennai - 600032, Tamil Nadu, India',
-      phone: '+91-44-XXXX-XXXX',
-      email: 'chennai@refranox.com',
-      timings: 'Mon-Fri: 9:00 AM - 6:00 PM',
-      type: 'Regional'
-    },
-    {
-      name: 'Eastern Region - Kolkata',
-      address: 'Salt Lake Electronics Complex, Kolkata - 700091, West Bengal, India',
-      phone: '+91-33-XXXX-XXXX',
-      email: 'kolkata@refranox.com',
-      timings: 'Mon-Fri: 9:00 AM - 6:00 PM',
-      type: 'Regional'
-    },
-    {
-      name: 'Western Region - Pune',
-      address: 'Pimpri-Chinchwad Industrial Area, Pune - 411019, Maharashtra, India',
-      phone: '+91-20-XXXX-XXXX',
-      email: 'pune@refranox.com',
-      timings: 'Mon-Fri: 9:00 AM - 6:00 PM',
-      type: 'Regional'
-    },
-    {
-      name: 'Gujarat Operations - Vadodara',
-      address: 'GIDC Industrial Estate, Vadodara - 390003, Gujarat, India',
-      phone: '+91-265-XXXX-XXXX',
-      email: 'vadodara@refranox.com',
-      timings: 'Mon-Fri: 9:00 AM - 6:00 PM',
-      type: 'Operational'
-    }
-  ];
 
   const contactReasons = [
     'Request a Quote',
@@ -105,12 +75,14 @@ const Contact = () => {
   ];
 
   const services = [
-    'Hot & Cold Insulation',
-    'Refractory Lining & Castables',
-    'Furnace & Boiler Insulation',
-    'Acoustic & Duct Insulation',
-    'Maintenance Services',
-    'Consulting Services',
+    'Thermal Insulation',
+    'Refractory Application',
+    'Passive Fire Proofing',
+    'Industrial Coating',
+    'Scaffolding Services',
+    'Specialized Civil Works',
+    'Mechanical Erection',
+    'Electrical Works',
     'Multiple Services',
     'Not Sure'
   ];
@@ -137,7 +109,7 @@ const Contact = () => {
           >
             <h1 className="text-5xl md:text-6xl font-bold mb-6">Contact Us</h1>
             <p className="text-xl md:text-2xl text-gray-200">
-              Ready to discuss your industrial insulation needs? We're here to help with expert consultation and customized solutions.
+              Ready to discuss your industrial project needs? We're here to help with expert consultation and customized solutions.
             </p>
           </motion.div>
         </div>
@@ -151,15 +123,15 @@ const Contact = () => {
               {
                 icon: Phone,
                 title: 'Call Us',
-                info: '+91-22-XXXX-XXXX',
-                subinfo: '24/7 Emergency Support',
+                info: '+91-96772-08721',
+                subinfo: 'Mon-Sat: 9:00 AM - 6:00 PM',
                 color: 'text-blue-600',
                 bgColor: 'bg-blue-50'
               },
               {
                 icon: Mail,
                 title: 'Email Us',
-                info: 'info@refranox.com',
+                info: 'info@ripl.co.in',
                 subinfo: 'Response within 24 hours',
                 color: 'text-green-600',
                 bgColor: 'bg-green-50'
@@ -194,7 +166,7 @@ const Contact = () => {
       </section>
 
       {/* Contact Form & Map */}
-      <section className="py-20 bg-white">
+      <section id="contact-form" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Form */}
@@ -361,65 +333,67 @@ const Contact = () => {
             >
               <div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Find Us Here</h3>
-                <div className="bg-gray-200 rounded-xl h-64 flex items-center justify-center">
-                  <div className="text-center">
-                    <MapPin className="h-12 w-12 text-gray-500 mx-auto mb-2" />
-                    <p className="text-gray-600">Interactive Map</p>
-                    <p className="text-sm text-gray-500">Google Maps Integration</p>
-                  </div>
+                <div className="bg-gray-200 rounded-xl h-64 overflow-hidden">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.3267!2d80.1589!3d13.1067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDA2JzI0LjEiTiA4MMKwMDknMzIuMCJF!5e0!3m2!1sen!2sin!4v1234567890"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen=""
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="REFRANOX Location"
+                  ></iframe>
                 </div>
               </div>
 
               <div className="bg-gray-50 rounded-xl p-6">
-                <h4 className="text-xl font-bold text-gray-900 mb-4">Head Office</h4>
+                <h4 className="text-xl font-bold text-gray-900 mb-4">Head Office - Chennai</h4>
                 <div className="space-y-3">
                   <div className="flex items-start">
-                    <Building2 className="h-5 w-5 text-orange-500 mr-3 mt-1" />
+                    <Building2 className="h-5 w-5 text-orange-500 mr-3 mt-1 flex-shrink-0" />
                     <div>
-                      <p className="font-medium text-gray-900">REFRANOX Pvt Ltd</p>
-                      <p className="text-gray-600">Plot No. 123, Industrial Area</p>
-                      <p className="text-gray-600">Andheri (East), Mumbai - 400099</p>
-                      <p className="text-gray-600">Maharashtra, India</p>
+                      <p className="font-medium text-gray-900">REFRANOX Industrial Solutions</p>
+                      <p className="text-gray-600">25/8A, Old Bank of Baroda Street</p>
+                      <p className="text-gray-600">Ambattur OT, Chennai - 600053</p>
+                      <p className="text-gray-600">Tamil Nadu, India</p>
                     </div>
                   </div>
 
                   <div className="flex items-center">
-                    <Phone className="h-5 w-5 text-orange-500 mr-3" />
-                    <span className="text-gray-700">+91-22-XXXX-XXXX</span>
+                    <Phone className="h-5 w-5 text-orange-500 mr-3 flex-shrink-0" />
+                    <span className="text-gray-700">+91-96772-08721</span>
                   </div>
 
                   <div className="flex items-center">
-                    <Mail className="h-5 w-5 text-orange-500 mr-3" />
-                    <span className="text-gray-700">info@refranox.com</span>
+                    <Mail className="h-5 w-5 text-orange-500 mr-3 flex-shrink-0" />
+                    <span className="text-gray-700">info@ripl.co.in</span>
                   </div>
 
                   <div className="flex items-center">
-                    <Clock className="h-5 w-5 text-orange-500 mr-3" />
-                    <span className="text-gray-700">Mon-Fri: 9:00 AM - 6:00 PM</span>
+                    <Clock className="h-5 w-5 text-orange-500 mr-3 flex-shrink-0" />
+                    <span className="text-gray-700">Mon-Sat: 9:00 AM - 6:00 PM</span>
                   </div>
 
                   <div className="flex items-center">
-                    <Globe className="h-5 w-5 text-orange-500 mr-3" />
+                    <Globe className="h-5 w-5 text-orange-500 mr-3 flex-shrink-0" />
                     <span className="text-gray-700">www.refranox.com</span>
                   </div>
                 </div>
               </div>
 
               <div className="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg">
-                <h4 className="text-lg font-bold text-blue-900 mb-2">Emergency Support</h4>
-                <p className="text-blue-800 mb-2">24/7 emergency response available for critical shutdowns and urgent repairs.</p>
-                <p className="text-blue-700 font-medium">Emergency Hotline: +91-XXXX-EMERGENCY</p>
+                <h4 className="text-lg font-bold text-blue-900 mb-2">Business Hours</h4>
+                <p className="text-blue-800 mb-2">We're available Monday through Saturday for all your industrial service needs.</p>
+                <p className="text-blue-700 font-medium">For urgent inquiries, please call: +91-96772-08721</p>
               </div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Office Locations */}
-     
-
       {/* FAQ Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -438,28 +412,28 @@ const Contact = () => {
             {[
               {
                 q: "What is the typical response time for quotes?",
-                a: "We provide initial quotes within 24-48 hours for standard projects. Complex projects may require 3-5 business days for detailed technical assessment."
+                a: "We provide initial quotes within 24-48 hours for standard projects. Complex projects may require 3-5 business days for detailed technical assessment and site evaluation."
               },
               {
-                q: "Do you provide emergency services?",
-                a: "Yes, we offer 24/7 emergency response for critical shutdowns, urgent repairs, and emergency insulation requirements across all our service locations."
+                q: "Do you provide on-site consultation?",
+                a: "Yes, we offer complimentary on-site consultations for project assessment, technical evaluation, and customized solution recommendations across Tamil Nadu and nearby regions."
               },
               {
                 q: "What industries do you serve?",
-                a: "We serve Power Generation, Oil & Gas, Petrochemicals, Steel & Cement, and various other process industries with specialized insulation solutions."
+                a: "We serve Power Generation, Oil & Gas, Petrochemicals, Steel & Cement, Fertilizer, Refineries, and various other process industries with specialized multi-disciplinary solutions."
               },
               {
                 q: "Do you provide warranties for your work?",
-                a: "Yes, we provide comprehensive warranties on materials and workmanship. Warranty periods vary based on the type of service and operating conditions."
+                a: "Yes, we provide comprehensive warranties on materials and workmanship. Warranty periods vary based on the type of service, materials used, and operating conditions."
               },
               {
-                q: "Can you handle large-scale projects?",
-                a: "Absolutely. We have successfully completed projects worth ₹50+ crores and have the infrastructure, manpower, and expertise to handle projects of any scale."
+                q: "Can you handle turnkey projects?",
+                a: "Absolutely. We offer complete turnkey and multi-disciplinary contract capabilities, managing projects from concept to completion with our integrated civil, mechanical, and electrical expertise."
               }
             ].map((faq, index) => (
               <motion.div
                 key={index}
-                className="bg-gray-50 rounded-lg p-6"
+                className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}

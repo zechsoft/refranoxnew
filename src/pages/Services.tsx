@@ -1,30 +1,75 @@
-import React, { useState } from 'react';
-import { Shield, Layers, Paintbrush, Flame, Building2, Settings, Hammer, Zap, CheckCircle, ArrowRight, Wrench, HardHat, Cog, Link } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Shield, Layers, Paintbrush, Flame, Building2, Settings, Hammer, Zap, CheckCircle, ArrowRight, Wrench, HardHat, Cog } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { Link, useLocation } from 'react-router-dom';
 
 const Services = () => {
   const [activeService, setActiveService] = useState(0);
+  const location = useLocation();
+
+  // Map of service IDs to array indices
+  const serviceIdMap = {
+    'industrial-insulation': 0,
+    'thermal-insulation': 0,
+    'refractory-works': 1,
+    'fire-proofing': 2,
+    'scaffolding': 3,
+    'painting-blasting': 4,
+    'industrial-coating': 4,
+    'civil-works': 5,
+    'mechanical-fabrication': 6,
+    'electrical-works': 7
+  };
+
+  // Handle navigation from header dropdown
+  useEffect(() => {
+    if (location.hash) {
+      const hash = location.hash.replace('#', '');
+      const serviceIndex = serviceIdMap[hash];
+      
+      if (serviceIndex !== undefined) {
+        // Set the active service immediately
+        setActiveService(serviceIndex);
+        
+        // Scroll to the service navigation section with better timing
+        setTimeout(() => {
+          const serviceNav = document.getElementById('service-navigation');
+          if (serviceNav) {
+            const headerOffset = 100; // Account for fixed header
+            const elementPosition = serviceNav.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+            
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
+            });
+          }
+        }, 300);
+      }
+    }
+  }, [location]);
 
   const services = [
     {
+      id: 'industrial-insulation',
       icon: Shield,
-      title: 'Industrial Insulation',
-      subtitle: 'Comprehensive Thermal Protection',
-      description: 'Advanced thermal insulation solutions for industrial equipment, pipelines, tanks, and HVAC systems. Our services ensure optimal energy efficiency, temperature control, and protection against harsh industrial environments.',
+      title: 'Thermal Insulation',
+      subtitle: 'Superior Energy Conservation',
+      description: 'We specialize in the supply and application of hot, cold, and acoustic insulation systems for process pipelines, equipment, boilers, and ducting in power, petrochemical, and industrial plants. Our expertise covers mineral wool, rock wool, glass wool, ceramic fiber, nitrile rubber, and polyurethane systems.',
       image: 'assests/home/insulationservices4.png',
       features: [
         'Hot & Cold Pipeline Insulation',
-        'Tank and Vessel Insulation',
-        'HVAC Duct Insulation Systems',
-        'Acoustic Insulation Solutions',
-        'Refractory Insulation Applications',
-        'Energy-Efficient Cladding Systems'
+        'Equipment & Boiler Insulation',
+        'Process Ducting Insulation',
+        'Mineral Wool & Rock Wool Systems',
+        'Glass Wool & Ceramic Fiber',
+        'Nitrile Rubber & Polyurethane Systems'
       ],
       benefits: [
-        'Energy Efficiency - Reduce heat loss by up to 95%',
-        'Cost Reduction - Lower operational and maintenance costs',
-        'Asset Protection - Extend equipment lifespan',
-        'Safety Enhancement - Improved working conditions'
+        'Energy Conservation - Superior thermal efficiency',
+        'Cost Optimization - Long-term performance savings',
+        'Safety Compliance - Tailored to client specifications',
+        'Design Excellence - Material selection & installation'
       ],
       color: 'text-blue-600',
       bgColor: 'bg-blue-50',
@@ -32,24 +77,25 @@ const Services = () => {
       gradientTo: 'to-blue-800'
     },
     {
+      id: 'refractory-works',
       icon: Flame,
-      title: 'Refractory Application Works',
-      subtitle: 'High-Temperature Solutions',
-      description: 'Specialized refractory installation and maintenance services for furnaces, boilers, and high-temperature industrial equipment. Expert solutions for extreme heat applications.',
+      title: 'Refractory Application Services',
+      subtitle: 'High-Temperature Expertise',
+      description: 'Our refractory division executes lining, gunning, casting, and ramming works for furnaces, kilns, boilers, reformers, and chimneys. We handle monolithic, brick, and castable systems using advanced mixing and installation techniques backed by trained applicators and precise quality control.',
       image: 'assests/services/refractory.png',
       features: [
-        'Furnace Refractory Lining',
-        'Boiler Refractory Installation',
-        'Castable Refractory Applications',
-        'Refractory Brick Installation',
-        'Gunning & Ramming Services',
-        'Emergency Refractory Repairs'
+        'Furnace & Kiln Refractory Lining',
+        'Boiler & Reformer Applications',
+        'Chimney Refractory Systems',
+        'Gunning & Casting Services',
+        'Ramming & Monolithic Works',
+        'Brick & Castable Systems'
       ],
       benefits: [
-        'High Temperature Resistance - Withstand up to 1800°C',
-        'Thermal Shock Protection - Handle rapid temperature changes',
-        'Extended Service Life - Durable high-performance materials',
-        'Energy Efficiency - Optimized heat retention'
+        'Heat Resistance - Proven high-temperature durability',
+        'Mechanical Strength - Advanced installation techniques',
+        'Quality Control - Trained applicators & supervision',
+        'Reliability - Long-lasting performance assurance'
       ],
       color: 'text-red-600',
       bgColor: 'bg-red-50',
@@ -57,24 +103,25 @@ const Services = () => {
       gradientTo: 'to-red-800'
     },
     {
+      id: 'fire-proofing',
       icon: Building2,
-      title: 'Passive Fire Proofing Works',
-      subtitle: 'Passive Fire Protection',
-      description: 'Comprehensive fire protection services including structural fireproofing, intumescent coatings, and fire-resistant systems to ensure safety and regulatory compliance.',
+      title: 'Passive Fire Proofing',
+      subtitle: 'Certified Fire Protection',
+      description: 'We offer comprehensive fireproofing solutions for structural steel, process units, and critical assets in oil & gas, refinery, and infrastructure sectors. Our services include intumescent and cementitious fireproofing systems, tested and approved under UL, ASTM, and BS standards.',
       image: 'assests/services/fireproofingnew.png',
       features: [
         'Structural Steel Fireproofing',
+        'Process Unit Fire Protection',
         'Intumescent Coating Systems',
-        'Fire-Resistant Board Installation',
-        'Penetration Sealing Systems',
-        'Fire Barrier Construction',
-        'Passive Fire Protection Audits'
+        'Cementitious Fireproofing',
+        'Onshore & Offshore Applications',
+        'Critical Asset Protection'
       ],
       benefits: [
-        'Life Safety - Protect personnel and assets',
-        'Regulatory Compliance - Meet fire safety codes',
-        'Insurance Benefits - Reduce premium costs',
-        'Asset Protection - Minimize fire damage'
+        'Fire Integrity - UL, ASTM & BS certified systems',
+        'Code Compliance - Meet international standards',
+        'Aesthetic Finish - Professional application quality',
+        'OEM Partnerships - Certified applicators & materials'
       ],
       color: 'text-orange-600',
       bgColor: 'bg-orange-50',
@@ -82,102 +129,77 @@ const Services = () => {
       gradientTo: 'to-orange-800'
     },
     {
+      id: 'scaffolding',
       icon: Layers,
-      title: 'Scaffolding Works',
+      title: 'Scaffolding Services',
       subtitle: 'Safe Access Solutions',
-      description: 'Professional scaffolding services providing safe, reliable access solutions for construction, maintenance, and industrial projects. We ensure compliance with safety standards and optimal working conditions.',
+      description: 'We undertake design, erection, and dismantling of scaffolding systems for industrial, power, and infrastructure projects. Our scaffolding operations are fully compliant with international safety standards, ensuring safe access for construction, maintenance, and shutdown works.',
       image: 'assests/services/Scaffolding1.png',
       features: [
-        'Tube & Coupler Scaffolding Systems',
-        'System Scaffolding Solutions',
-        'Mobile Access Towers',
-        'Suspended Access Platforms',
-        'Stairway Access Systems',
-        'Specialized Industrial Scaffolding'
+        'Design & Engineering Support',
+        'Modular Scaffolding Systems',
+        'Tubular Scaffolding Solutions',
+        'System Scaffold Installations',
+        'Construction & Maintenance Access',
+        'Shutdown Project Support'
       ],
       benefits: [
-        'Safety Compliance - Meet international safety standards',
-        'Flexible Design - Adaptable to complex structures',
-        'Quick Installation - Minimize project downtime',
-        'Cost Effective - Optimized resource utilization'
+        'Safety Standards - International compliance certified',
+        'Third-Party Inspections - Regular quality audits',
+        'Skilled Manpower - Trained scaffolding professionals',
+        'Efficiency Focus - Stability & safe access guaranteed'
       ],
       color: 'text-green-600',
       bgColor: 'bg-green-50',
       gradientFrom: 'from-green-600',
       gradientTo: 'to-green-800'
     },
-    
     {
+      id: 'painting-blasting',
       icon: Paintbrush,
-      title: 'Industrial Coating Applications',
-      subtitle: 'Surface Protection & Coating',
-      description: 'Complete surface preparation and protective coating services including abrasive blasting, industrial painting, and specialized coating applications for long-lasting asset protection.',
+      title: 'Industrial Coating',
+      subtitle: 'Surface Protection Systems',
+      description: 'We provide surface preparation and protective coating systems for steel, piping, equipment, and tanks across industries. Our expertise includes abrasive blasting, epoxy and polyurethane coatings, anti-corrosive systems, and high-temperature coatings using products from leading manufacturers.',
       image: 'assests/services/Scaffolding.png',
       features: [
         'Abrasive Blasting Services',
-        'Industrial Protective Coatings',
-        'Anti-Corrosion Painting Systems',
-        'Fireproof Coating Applications',
-        'Specialized Marine Coatings',
-        'Surface Preparation & Treatment'
+        'Epoxy & Polyurethane Coatings',
+        'Anti-Corrosive Systems',
+        'High-Temperature Coatings',
+        'Steel & Equipment Protection',
+        'Tank Coating Applications'
       ],
       benefits: [
-        'Corrosion Protection - Extend asset life by decades',
-        'Weather Resistance - Superior environmental protection',
-        'Quality Assurance - Certified coating systems',
-        'Aesthetic Enhancement - Professional finish quality'
+        'Maximum Protection - Superior durability in harsh environments',
+        'Lifecycle Performance - Extended asset lifespan',
+        'Quality Inspection - NACE/SSPC certified inspectors',
+        'QA/QC Adherence - Strict quality control measures'
       ],
       color: 'text-purple-600',
       bgColor: 'bg-purple-50',
       gradientFrom: 'from-purple-600',
       gradientTo: 'to-purple-800'
     },
-    
-    
     {
-      icon: Settings,
-      title: 'Mechanical Fabrication & Erection',
-      subtitle: 'Precision Engineering Solutions',
-      description: 'Complete mechanical fabrication and erection services including custom equipment manufacturing, structural steel work, and precision installation services.',
-      image: 'assests/services/mechanical.png',
-      features: [
-        'Custom Equipment Fabrication',
-        'Structural Steel Erection',
-        'Piping System Installation',
-        'Pressure Vessel Fabrication',
-        'Mechanical Equipment Installation',
-        'Precision Machining Services'
-      ],
-      benefits: [
-        'Quality Fabrication - Certified welding and machining',
-        'Precision Installation - Exact dimensional requirements',
-        'Project Integration - Seamless coordination',
-        'Cost Optimization - Efficient manufacturing processes'
-      ],
-      color: 'text-indigo-600',
-      bgColor: 'bg-indigo-50',
-      gradientFrom: 'from-indigo-600',
-      gradientTo: 'to-indigo-800'
-    },
-    {
+      id: 'civil-works',
       icon: Hammer,
-      title: 'Civil Works',
-      subtitle: 'Foundation & Infrastructure',
-      description: 'Comprehensive civil construction services including foundations, structural concrete work, and infrastructure development for industrial and commercial projects.',
+      title: 'Specialized Civil Works',
+      subtitle: 'Advanced Engineering Solutions',
+      description: 'We execute a range of specialized civil engineering services including shotcreting, soil stabilization, soil nailing, and rock anchoring (both inclined and vertical). Our team delivers technically sound, site-specific solutions for retaining structures, slope protection, and foundation strengthening.',
       image: 'assests/services/civil.png',
       features: [
-        'Foundation Construction',
-        'Structural Concrete Works',
-        'Site Preparation & Earthworks',
-        'Underground Utilities Installation',
-        'Road & Pavement Construction',
-        'Drainage System Installation'
+        'Shotcreting Applications',
+        'Soil Stabilization Works',
+        'Soil Nailing Systems',
+        'Rock Anchoring (Inclined & Vertical)',
+        'Retaining Structure Solutions',
+        'Slope Protection & Foundation Strengthening'
       ],
       benefits: [
-        'Strong Foundations - Ensure structural integrity',
-        'Quality Construction - Meet engineering specifications',
-        'Timely Delivery - Efficient project execution',
-        'Regulatory Compliance - Adhere to building codes'
+        'Technical Excellence - Site-specific engineered solutions',
+        'Precision Equipment - Advanced civil engineering tools',
+        'Qualified Engineers - Expert design & execution',
+        'Long-Lasting Safety - Stringent supervision standards'
       ],
       color: 'text-gray-600',
       bgColor: 'bg-gray-50',
@@ -185,24 +207,51 @@ const Services = () => {
       gradientTo: 'to-gray-800'
     },
     {
-      icon: Zap,
-      title: 'Electrical Works',
-      subtitle: 'Power & Control Systems',
-      description: 'Complete electrical installation and maintenance services including power distribution, control systems, lighting, and instrumentation for industrial facilities.',
-      image: 'assests/services/electrical.png',
+      id: 'mechanical-fabrication',
+      icon: Settings,
+      title: 'Mechanical Erection',
+      subtitle: 'Structural & Equipment Installation',
+      description: 'Our mechanical division handles erection, alignment, and installation of steel structures, heavy equipment, and process piping for new build and brownfield projects. We are equipped for rigging, welding, hydrotesting, and commissioning support, adhering to stringent quality and safety norms.',
+      image: 'assests/services/mechanical.png',
       features: [
-        'Power Distribution Systems',
-        'Motor Control Centers',
-        'Industrial Lighting Systems',
-        'Instrumentation & Controls',
-        'Cable Tray & Conduit Installation',
-        'Electrical Panel Fabrication'
+        'Steel Structure Erection',
+        'Heavy Equipment Installation',
+        'Process Piping Systems',
+        'Rigging & Lifting Operations',
+        'Welding & Fabrication',
+        'Hydrotesting & Commissioning'
       ],
       benefits: [
-        'Reliable Power - Ensure continuous operations',
-        'Safety Systems - Comprehensive protection',
-        'Energy Efficiency - Optimized electrical systems',
-        'Code Compliance - Meet electrical standards'
+        'Accurate Execution - Precise alignment & fit-up',
+        'Efficient Delivery - Meet critical project schedules',
+        'Safety Compliance - Stringent quality & safety norms',
+        'Full-Cycle Support - Fabrication to final installation'
+      ],
+      color: 'text-indigo-600',
+      bgColor: 'bg-indigo-50',
+      gradientFrom: 'from-indigo-600',
+      gradientTo: 'to-indigo-800'
+    },
+    {
+      id: 'electrical-works',
+      icon: Zap,
+      title: 'Electrical Works',
+      subtitle: 'Power & Instrumentation',
+      description: 'We execute industrial and infrastructure electrical works covering LV/MV installations, cable laying, termination, earthing, lighting, and instrumentation cabling. Our services span new projects, maintenance, and shutdown activities, with a focus on reliability, safety, and system efficiency.',
+      image: 'assests/services/electrical.png',
+      features: [
+        'LV/MV Power Installations',
+        'Cable Laying & Termination',
+        'Earthing & Grounding Systems',
+        'Industrial Lighting Solutions',
+        'Instrumentation Cabling',
+        'Maintenance & Shutdown Support'
+      ],
+      benefits: [
+        'Reliable Systems - Focus on operational efficiency',
+        'Safety Compliance - Statutory regulation adherence',
+        'Licensed Electricians - Qualified technical workforce',
+        'End-to-End Solutions - Installation to maintenance'
       ],
       color: 'text-yellow-600',
       bgColor: 'bg-yellow-50',
@@ -216,25 +265,25 @@ const Services = () => {
       icon: HardHat,
       title: 'Safety Excellence',
       description: 'Zero-incident safety culture with comprehensive training programs and strict adherence to international safety standards.',
-      stats: '2M+ Safe Work Hours'
+      stats: 'HSE Certified'
     },
     {
       icon: Wrench,
       title: 'Technical Expertise',
       description: 'Skilled workforce with specialized certifications and extensive experience in complex industrial projects.',
-      stats: '50+ Certified Technicians'
+      stats: 'Certified Professionals'
     },
     {
       icon: Shield,
       title: 'Quality Assurance',
-      description: 'ISO certified processes with rigorous quality control measures ensuring superior project outcomes.',
-      stats: 'ISO 9001:2015 Certified'
+      description: 'Robust QA/QC processes with rigorous quality control measures ensuring superior project outcomes.',
+      stats: 'Quality Certified'
     },
     {
       icon: Cog,
       title: 'Advanced Equipment',
       description: 'State-of-the-art tools and equipment enabling efficient execution of specialized industrial services.',
-      stats: 'Latest Technology'
+      stats: 'Modern Technology'
     }
   ];
 
@@ -261,7 +310,7 @@ const Services = () => {
       </section>
 
       {/* Service Navigation */}
-      <section className="py-12 bg-white shadow-sm">
+      <section id="service-navigation" className="py-12 bg-white shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             {services.map((service, index) => {
@@ -292,7 +341,7 @@ const Services = () => {
       </section>
 
       {/* Active Service Details */}
-      <section className="py-20 bg-gray-50">
+      <section id="service-details" className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div
             key={activeService}
@@ -447,7 +496,7 @@ const Services = () => {
           >
             <h2 className="text-4xl font-bold mb-4">Complete Industrial Solutions Provider</h2>
             <p className="text-xl mb-8 max-w-2xl mx-auto text-blue-200">
-              From insulation to electrical works - we deliver comprehensive industrial services 
+              From thermal insulation to electrical works - we deliver comprehensive industrial services 
               with safety, quality, and efficiency at the forefront of everything we do.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

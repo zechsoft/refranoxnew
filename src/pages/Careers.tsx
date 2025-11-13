@@ -53,23 +53,22 @@ const Careers = () => {
   ];
 
   const benefits = [
-    'Competitive salary packages',
-    'Health insurance coverage',
-    'Performance-based bonuses',
-    'Professional development allowance',
-    'Flexible working arrangements',
-    'Transportation allowance',
-    'Annual leave and sick leave',
-    'Retirement savings plan',
-    'Employee assistance program',
-    'Team building activities'
+    'Competitive startup equity options',
+    'Flexible work hours & remote options',
+    'Learning & upskilling budget',
+    'Performance incentives',
+    'Health & wellness benefits',
+    'Fast-track career growth',
+    'Casual work environment',
+    'Team outings & events',
+    'Modern workspace facilities',
+    'Direct impact on company success'
   ];
-
   // No current openings available
-  const currentOpenings = [];
+  const currentOpenings: never[] = [];
 
   // Future openings will be updated soon
-  const futureOpenings = [];
+  const futureOpenings: never[] = [];
 
   const [formData, setFormData] = useState({
     name: '',
@@ -417,7 +416,7 @@ const Careers = () => {
                           <div>
                             <h4 className="text-lg font-bold text-gray-900 mb-3">Requirements</h4>
                             <ul className="space-y-2">
-                              {position.requirements.map((req, idx) => (
+                              {position.requirements.map((req: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | null | undefined, idx: React.Key | null | undefined) => (
                                 <li key={idx} className="flex items-start">
                                   <div className="w-2 h-2 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
                                   <span className="text-gray-700">{req}</span>
@@ -429,7 +428,7 @@ const Careers = () => {
                           <div>
                             <h4 className="text-lg font-bold text-gray-900 mb-3">Key Responsibilities</h4>
                             <ul className="space-y-2">
-                              {position.responsibilities.map((resp, idx) => (
+                              {position.responsibilities.map((resp: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | null | undefined, idx: React.Key | null | undefined) => (
                                 <li key={idx} className="flex items-start">
                                   <div className="w-2 h-2 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
                                   <span className="text-gray-700">{resp}</span>

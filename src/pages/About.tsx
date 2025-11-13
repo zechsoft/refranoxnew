@@ -63,9 +63,7 @@ const About = () => {
     'ISO 9001:2015 Quality Management',
     'ISO 14001:2015 Environmental Management',
     'ISO 45001:2018 Occupational Health & Safety',
-    'NSIC Certificate',
-    'PED Certification',
-    'ASME Certification'
+    
   ];
 
   const locations = [
@@ -135,12 +133,12 @@ const About = () => {
                    
           <div className="grid grid-cols-2 gap-4 transition-all duration-1000 opacity-100 translate-x-0">
             <img
-              src="https://images.pexels.com/photos/236698/pexels-photo-236698.jpeg?auto=compress&cs=tinysrgb&w=600"
+              src="assests/home/insulationservices4.png"
               alt="Industrial petrochemical facility"
               className="rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
             />
             <img
-              src="https://images.pexels.com/photos/4483610/pexels-photo-4483610.jpeg?auto=compress&cs=tinysrgb&w=600"
+              src="assests/home/insulationservices1.png"
               alt="Industrial insulation materials"
               className="rounded-lg shadow-lg mt-8 hover:shadow-xl transition-shadow duration-300"
             />
@@ -227,56 +225,80 @@ const About = () => {
       </section> */}
 
       {/* Infrastructure & Capabilities */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-4xl font-bold text-gray-900 mb-6">Infrastructure & Capabilities</h2>
-              <div className="space-y-4 text-lg text-gray-600">
-                <p>
-                  Our state-of-the-art facilities and advanced equipment enable us to handle projects 
-                  of any scale and complexity. From small maintenance jobs to large industrial installations, 
-                  we have the infrastructure to deliver excellence.
-                </p>
-                <ul className="space-y-2">
-                  <li className="flex items-center">
-                    <Award className="h-5 w-5 text-orange-500 mr-2" />
-                    Modern fabrication workshops with precision equipment
-                  </li>
-                  <li className="flex items-center">
-                    <Award className="h-5 w-5 text-orange-500 mr-2" />
-                    Advanced material testing laboratories
-                  </li>
-                  <li className="flex items-center">
-                    <Award className="h-5 w-5 text-orange-500 mr-2" />
-                    Fleet of specialized transportation vehicles
-                  </li>
-                  <li className="flex items-center">
-                    <Award className="h-5 w-5 text-orange-500 mr-2" />
-                    Professional training centers for workforce development
-                  </li>
-                </ul>
+          <motion.div
+            className="text-center mb-10"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">Infrastructure & Capabilities</h2>
+            <p className="text-gray-600 max-w-3xl mx-auto">
+              Our well-established infrastructure includes <strong>skilled engineers, certified technicians, and experienced supervisors</strong> capable of executing complex industrial projects with modern equipment and dedicated facilities.
+            </p>
+          </motion.div>
+
+          {/* Core Competencies */}
+          <motion.div
+            className="mb-8"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            viewport={{ once: true }}
+          >
+            <h3 className="text-xl font-bold text-gray-900 mb-4">Core Competencies</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div className="bg-gray-50 rounded-lg p-5 border-l-4 border-blue-600 hover:shadow-md transition-shadow">
+                <h4 className="font-bold text-gray-900 mb-2">Thermal & Fire Protection</h4>
+                <p className="text-sm text-gray-600">Insulation, refractory, fire proofing & coating</p>
               </div>
-            </motion.div>
-            
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <img
-                src="https://images.pexels.com/photos/1108101/pexels-photo-1108101.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                alt="Manufacturing facility"
-                className="rounded-lg shadow-lg w-full"
-              />
-            </motion.div>
-          </div>
+              
+              <div className="bg-gray-50 rounded-lg p-5 border-l-4 border-orange-600 hover:shadow-md transition-shadow">
+                <h4 className="font-bold text-gray-900 mb-2">Scaffolding Solutions</h4>
+                <p className="text-sm text-gray-600">Safe and efficient project execution</p>
+              </div>
+              
+              <div className="bg-gray-50 rounded-lg p-5 border-l-4 border-green-600 hover:shadow-md transition-shadow">
+                <h4 className="font-bold text-gray-900 mb-2">Specialized Civil Works</h4>
+                <p className="text-sm text-gray-600">Shotcreting, soil stabilization & anchoring</p>
+              </div>
+              
+              <div className="bg-gray-50 rounded-lg p-5 border-l-4 border-purple-600 hover:shadow-md transition-shadow">
+                <h4 className="font-bold text-gray-900 mb-2">Mechanical Erection</h4>
+                <p className="text-sm text-gray-600">Steel, piping & equipment installation</p>
+              </div>
+              
+              <div className="bg-gray-50 rounded-lg p-5 border-l-4 border-red-600 hover:shadow-md transition-shadow">
+                <h4 className="font-bold text-gray-900 mb-2">Electrical Works</h4>
+                <p className="text-sm text-gray-600">New builds, maintenance & shutdowns</p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Quality & Safety and Project Delivery */}
+          <motion.div
+            className="grid grid-cols-1 lg:grid-cols-2 gap-5"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            <div className="bg-gradient-to-br from-blue-600 to-blue-700 rounded-lg p-6 text-white">
+              <h3 className="text-xl font-bold mb-2">Quality & Safety</h3>
+              <p className="text-blue-100 text-sm">
+                Robust <strong>QA/QC and HSE systems</strong> ensure compliance, safety, and reliability throughout project execution.
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-br from-orange-600 to-orange-700 rounded-lg p-6 text-white">
+              <h3 className="text-xl font-bold mb-2">Project Delivery</h3>
+              <p className="text-orange-100 text-sm">
+                <strong>Turnkey and multi-disciplinary</strong> capabilities across power, oil & gas, steel, cement, and infrastructure sectors.
+              </p>
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -343,7 +365,10 @@ const About = () => {
                 viewport={{ once: true }}
               >
                 <Award className="h-12 w-12 text-orange-500 mx-auto mb-4" />
-                <h3 className="font-semibold text-gray-900">{cert}</h3>
+                <h3 className="font-semibold text-gray-900 mb-3">{cert}</h3>
+                <p className="text-sm text-gray-500 italic">
+                  Our certification process is currently underway. Certificates will be uploaded soon
+                </p>
               </motion.div>
             ))}
           </div>

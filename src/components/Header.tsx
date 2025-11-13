@@ -127,27 +127,41 @@ const Header = () => {
 
   const handleServiceClick = (serviceHref) => {
     const [path, hash] = serviceHref.split('#');
-    navigate(path);
-    if (hash) {
-      setTimeout(() => {
-        const element = document.getElementById(hash);
-        if (element) element.scrollIntoView({ behavior: 'smooth' });
-      }, 100);
-    }
+    
+    // Close dropdowns
     setIsServicesOpen(false);
     setIsOpen(false);
+    
+    // Navigate with hash
+    if (hash) {
+      navigate(`${path}#${hash}`);
+    } else {
+      navigate(path);
+    }
   };
 
   const handleProductClick = (productId) => {
     navigate('/products');
-    if (productId) {
-      setTimeout(() => {
-        const element = document.getElementById(productId);
-        if (element) element.scrollIntoView({ behavior: 'smooth' });
-      }, 100);
-    }
     setIsProductsOpen(false);
     setIsOpen(false);
+    if (productId) {
+      setTimeout(() => {
+        // First scroll to the products section
+        const productsSection = document.getElementById('products-section');
+        if (productsSection) {
+          productsSection.scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        // Then after a brief delay, search for the product and open its modal
+        setTimeout(() => {
+          // Find the product in the page
+          const productElement = document.querySelector(`[data-product-id="${productId}"]`);
+          if (productElement) {
+            productElement.click(); // This will trigger the modal to open
+          }
+        }, 800); // Wait for scroll to complete
+      }, 100);
+    }
   };
 
   const handleNavClick = (e, href) => {
@@ -203,17 +217,13 @@ const Header = () => {
               <div key={item.name} className="relative" ref={item.type === 'services' ? servicesDropdownRef : item.type === 'products' ? productsDropdownRef : null}>
                 {item.hasDropdown ? (
                   <div
-                    className="relative"
-                    onMouseEnter={() => {
-                      if (item.type === 'services') setIsServicesOpen(true);
-                      if (item.type === 'products') setIsProductsOpen(true);
-                    }}
-                    onMouseLeave={() => {
-                      if (item.type === 'services') setIsServicesOpen(false);
-                      if (item.type === 'products') setIsProductsOpen(false);
-                    }}
+                    className="relative group"
                   >
                     <button
+                      onMouseEnter={() => {
+                        if (item.type === 'services') setIsServicesOpen(true);
+                        if (item.type === 'products') setIsProductsOpen(true);
+                      }}
                       className={`font-medium transition-colors duration-200 flex items-center ${
                         location.pathname === item.href
                           ? isScrolled
@@ -225,16 +235,22 @@ const Header = () => {
                       }`}
                     >
                       {item.name}
-                      <ChevronDown className="ml-1 h-4 w-4" />
+                      <ChevronDown className={`ml-1 h-4 w-4 transition-transform duration-200 ${
+                        (item.type === 'services' && isServicesOpen) || (item.type === 'products' && isProductsOpen) 
+                          ? 'rotate-180' 
+                          : ''
+                      }`} />
                     </button>
 
                     {/* Services Dropdown */}
                     {item.type === 'services' && isServicesOpen && (
                       <div 
-                        className="absolute top-full left-0 mt-2 w-80 bg-white rounded-lg shadow-xl border border-gray-200 py-2 opacity-100 translate-y-0 transition-all duration-200"
+                        className="absolute top-full left-0 mt-1 w-80 bg-white rounded-lg shadow-xl border border-gray-200 py-2 opacity-100 translate-y-0 transition-all duration-200"
                         style={{
                           animation: 'fadeIn 0.2s ease-out'
                         }}
+                        onMouseEnter={() => setIsServicesOpen(true)}
+                        onMouseLeave={() => setIsServicesOpen(false)}
                       >
                         <div className="px-4 py-2 text-sm text-gray-500 font-semibold border-b border-gray-100">
                           Our Services
@@ -245,13 +261,13 @@ const Header = () => {
                             <button
                               key={service.name}
                               onClick={() => handleServiceClick(service.href)}
-                              className="w-full flex items-start px-4 py-3 hover:bg-gray-50 transition-colors duration-200 text-left"
+                              className="w-full flex items-start px-4 py-3 hover:bg-blue-50 transition-colors duration-200 text-left group/item"
                             >
-                              <div className="bg-blue-50 p-2 rounded-lg mr-3 mt-0.5">
+                              <div className="bg-blue-50 p-2 rounded-lg mr-3 mt-0.5 group-hover/item:bg-blue-100 transition-colors">
                                 <IconComponent className="h-4 w-4 text-blue-600" />
                               </div>
                               <div>
-                                <div className="text-sm font-medium text-gray-900">{service.name}</div>
+                                <div className="text-sm font-medium text-gray-900 group-hover/item:text-blue-600 transition-colors">{service.name}</div>
                                 <div className="text-xs text-gray-500">{service.description}</div>
                               </div>
                             </button>
@@ -271,10 +287,12 @@ const Header = () => {
                     {/* Products Dropdown */}
                     {item.type === 'products' && isProductsOpen && (
                       <div 
-                        className="absolute top-full left-0 mt-2 w-80 bg-white rounded-lg shadow-xl border border-gray-200 py-2 max-h-96 overflow-y-auto opacity-100 translate-y-0 transition-all duration-200"
+                        className="absolute top-full left-0 mt-1 w-80 bg-white rounded-lg shadow-xl border border-gray-200 py-2 max-h-96 overflow-y-auto opacity-100 translate-y-0 transition-all duration-200"
                         style={{
                           animation: 'fadeIn 0.2s ease-out'
                         }}
+                        onMouseEnter={() => setIsProductsOpen(true)}
+                        onMouseLeave={() => setIsProductsOpen(false)}
                       >
                         <div className="px-4 py-2 text-sm text-gray-500 font-semibold border-b border-gray-100">
                           Our Products
