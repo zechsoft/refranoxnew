@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation, To } from 'react-router-dom';
 import { Menu, X, Wrench, ChevronDown, Shield, Layers, Paintbrush, Flame, Building2, Settings, Hammer, Zap } from 'lucide-react';
 
 const Header = () => {
@@ -23,7 +23,7 @@ const Header = () => {
   }, []);
 
   useEffect(() => {
-    const handleClickOutside = (event) => {
+    const handleClickOutside = (event: { target: any; }) => {
       if (servicesDropdownRef.current && !servicesDropdownRef.current.contains(event.target)) {
         setIsServicesOpen(false);
       }
@@ -118,14 +118,14 @@ const Header = () => {
     { name: 'Services', href: '/services', hasDropdown: true, type: 'services' },
     { name: 'Products', href: '/products', hasDropdown: true, type: 'products' },
     { name: 'Industries', href: '/industries' },
-    { name: 'Projects', href: '/projects' },
-    { name: 'Clients', href: '/clients' },
-    { name: 'QHSE', href: '/qhse' },
+    // { name: 'Projects', href: '/projects' },
+    // { name: 'Clients', href: '/clients' },
+    // { name: 'QHSE', href: '/qhse' },
     { name: 'Careers', href: '/careers' },
     { name: 'Contact', href: '/contact' },
   ];
 
-  const handleServiceClick = (serviceHref) => {
+  const handleServiceClick = (serviceHref: string) => {
     const [path, hash] = serviceHref.split('#');
     
     // Close dropdowns
@@ -140,7 +140,7 @@ const Header = () => {
     }
   };
 
-  const handleProductClick = (productId) => {
+  const handleProductClick = (productId: string) => {
     navigate('/products');
     setIsProductsOpen(false);
     setIsOpen(false);
@@ -164,16 +164,19 @@ const Header = () => {
     }
   };
 
-  const handleNavClick = (e, href) => {
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, href: To) => {
     e.preventDefault();
     navigate(href);
     setIsOpen(false);
   };
 
+  // Check if we're on a page with a dark hero section
+  const isDarkHeroPage = ['/services', '/about', '/contact'].includes(location.pathname);
+  
   return (
     <header
       className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled
+        isScrolled || isDarkHeroPage
           ? 'bg-white/95 backdrop-blur-sm shadow-lg'
           : 'bg-transparent'
       }`}
@@ -205,8 +208,8 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <a href="/" onClick={(e) => handleNavClick(e, '/')} className="flex items-center space-x-2">
-            <Wrench className={`h-8 w-8 ${isScrolled ? 'text-blue-600' : 'text-white'}`} />
-            <span className={`text-2xl font-bold ${isScrolled ? 'text-gray-900' : 'text-white'}`}>
+            <Wrench className={`h-8 w-8 ${isScrolled || isDarkHeroPage ? 'text-blue-600' : 'text-white'}`} />
+            <span className={`text-2xl font-bold ${isScrolled || isDarkHeroPage ? 'text-gray-900' : 'text-white'}`}>
               REFRANOX
             </span>
           </a>
@@ -226,10 +229,10 @@ const Header = () => {
                       }}
                       className={`font-medium transition-colors duration-200 flex items-center ${
                         location.pathname === item.href
-                          ? isScrolled
+                          ? (isScrolled || isDarkHeroPage)
                             ? 'text-blue-600'
                             : 'text-orange-400'
-                          : isScrolled
+                          : (isScrolled || isDarkHeroPage)
                           ? 'text-gray-700 hover:text-blue-600'
                           : 'text-white hover:text-orange-400'
                       }`}
@@ -323,10 +326,10 @@ const Header = () => {
                     onClick={(e) => handleNavClick(e, item.href)}
                     className={`font-medium transition-colors duration-200 ${
                       location.pathname === item.href
-                        ? isScrolled
+                        ? (isScrolled || isDarkHeroPage)
                           ? 'text-blue-600'
                           : 'text-orange-400'
-                        : isScrolled
+                        : (isScrolled || isDarkHeroPage)
                         ? 'text-gray-700 hover:text-blue-600'
                         : 'text-white hover:text-orange-400'
                     }`}
@@ -339,18 +342,17 @@ const Header = () => {
           </nav>
 
           {/* Get Quote Button */}
-          <a
-            href="/contact"
-            onClick={(e) => handleNavClick(e, '/contact')}
-            className="hidden lg:block bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-lg font-medium transition-colors duration-200"
+          <button
+            onClick={() => navigate('/contact#contact-form')}
+            className="hidden lg:block bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-lg font-medium transition-colors duration-200 cursor-pointer"
           >
             Get Quote
-          </a>
+          </button>
 
           {/* Mobile menu button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className={`lg:hidden ${isScrolled ? 'text-gray-900' : 'text-white'}`}
+            className={`lg:hidden ${(isScrolled || isDarkHeroPage) ? 'text-gray-900' : 'text-white'}`}
           >
             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
@@ -465,13 +467,15 @@ const Header = () => {
                 )}
               </div>
             ))}
-            <a
-              href="/contact"
-              onClick={(e) => handleNavClick(e, '/contact')}
-              className="block px-3 py-2 text-base font-medium bg-orange-500 text-white rounded-md text-center mt-4"
+            <button
+              onClick={() => {
+                navigate('/contact#contact-form');
+                setIsOpen(false);
+              }}
+              className="block px-3 py-2 text-base font-medium bg-orange-500 text-white rounded-md text-center mt-4 w-full cursor-pointer"
             >
               Get Quote
-            </a>
+            </button>
           </div>
         </div>
       )}
