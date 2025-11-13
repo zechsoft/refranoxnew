@@ -14,32 +14,32 @@ import QHSE from './pages/QHSE';
 import Careers from './pages/Careers';
 import Contact from './pages/Contact';
 import './index.css';
-import Maintenance from "./pages/Maintenance";
+
 
 function App() {
   return (
-    // <Router>
-    //   <div className="min-h-screen">
-    //     <Header />
-    //     <Routes>
-    //       <Route path="/" element={<Home />} />
-    //       <Route path="/about" element={<About />} />
-    //       <Route path="/services" element={<Services />} />
-    //       <Route path="/products" element={<Products />} />
-    //       <Route path="/industries" element={<Industries />} />
-    //       <Route path="/projects" element={<Projects />} />
-    //       <Route path="/clients" element={<Clients />} />
-    //       <Route path="/qhse" element={<QHSE />} />
-    //       <Route path="/careers" element={<Careers />} />
-    //       <Route path="/contact" element={<Contact />} />
-    //     </Routes>
-    //     <Footer />
+    <Router>
+      <div className="min-h-screen">
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/industries" element={<Industries />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/clients" element={<Clients />} />
+          <Route path="/qhse" element={<QHSE />} />
+          <Route path="/careers" element={<Careers />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+        <Footer />
         
-    //     {/* Floating Contact Widgets - Available on all pages */}
-    //     <FloatingContactWidgets />
-    //   </div>
-    // </Router>
-    <Maintenance />
+        {/* Floating Contact Widgets - Available on all pages */}
+        <FloatingContactWidgets />
+      </div>
+    </Router>
+    
   );
 }
 
