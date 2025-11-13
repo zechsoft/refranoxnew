@@ -155,7 +155,7 @@ const Header = () => {
         // Then after a brief delay, search for the product and open its modal
         setTimeout(() => {
           // Find the product in the page
-          const productElement = document.querySelector(`[data-product-id="${productId}"]`);
+          const productElement = document.querySelector(`[data-product-id="${productId}"]`) as HTMLElement;
           if (productElement) {
             productElement.click(); // This will trigger the modal to open
           }
@@ -171,7 +171,7 @@ const Header = () => {
   };
 
   // Check if we're on a page with a dark hero section
-  const isDarkHeroPage = ['/services', '/about', '/contact'].includes(location.pathname);
+  const isDarkHeroPage = ['/services', '/about', '/contact', '/industries', '/projects', '/clients', '/qhse', '/careers', '/products'].includes(location.pathname);
   
   return (
     <header
